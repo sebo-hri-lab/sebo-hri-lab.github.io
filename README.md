@@ -31,6 +31,12 @@ In order to add your picture and a link to your website on the "People" page of 
 
 5. Finally, commit your changes and make a pull request so that your changes are approved and reflected on the actual website.
 
+## How to run a simple HTTP server to view the site locally
+
+First, in a terminal, `cd` into this directory (uchicago-intro-robotics-winter-2021-website), then run:
+```
+python -m SimpleHTTPServer
+```
 
 ## TODOs
 
