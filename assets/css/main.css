@@ -561,6 +561,11 @@ hr:after {
     width: 91.67%;
 }
 
+.row>.col-test2 {
+    margin: auto;
+    width: 80%;
+}
+
 .row>.off-test {
     margin-left: 4.165%;
 }
@@ -1641,6 +1646,11 @@ article.pub-details a {
 }
 
 article.pub-details2 a {
+    color: #000000;
+    font-weight: normal;
+}
+
+article.pub-details3 a {
     color: #000000;
     font-weight: normal;
 }

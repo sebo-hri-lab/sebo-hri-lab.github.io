@@ -46,7 +46,7 @@ In order to add your picture and a link to your website on the "People" page of 
 
 First, in a terminal, `cd` into this directory (uchicago-intro-robotics-winter-2021-website), then run:
 ```
-python -m SimpleHTTPServer
+python -m http.server
 ```
 
 ## TODOs
@@ -57,10 +57,3 @@ python -m SimpleHTTPServer
 - Add content to the join us page
 - Add some research highlights to the index page
 - Add lab address / location to the footer
-
-
-
-
-
-
-
