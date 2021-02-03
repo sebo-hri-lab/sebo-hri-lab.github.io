@@ -21,6 +21,7 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    <script src="test.js"></script>
 </head>
 
 <body class="no-sidebar is-preload">
@@ -38,29 +39,136 @@
             </div>
 
             <!-- Nav -->
-            <nav id="nav">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="news.html">News</a></li>
-                    <li><a href="people.html">People</a></li>
-                    <li><a href="research.html">Research</a></li>
-                    <li><a href="publications.html">Publications</a></li>
-                    <li><a href="for_lab_members.html">For Lab Members</a></li>
-                    <li><a href="join_us.html">Join Us</a></li>
-                </ul>
-            </nav>
+            <div id="nav-placeholder"></div>
+            <script>
+                $(function() {
+                    $("#nav-placeholder").load("nav.html");
+                });
+            </script>
+
 
         </div>
 
         <!-- Main -->
 
         <div class="wrapper style1">
-
             <section id="features" class="container special">
                 <header>
-                    <h2>Coming Soon!</h2>
-                    <br />
+                    <h2>Statement of Purpose</h2>
                 </header>
+                <div class="row pub-item2">
+                    <article class="col-test2 col-12-mobile">
+                        <p>
+                            Our mission is to develop robots that help people by engaging them in intelligent, intuitive, and purposeful social interactions. Our work draws from the fields of human-computer interaction (HCI), robotics, and artificial intelligence (AI) and seeks
+                            to make a real-world impact in healthcare, education, and the corporate world.
+                    </article>
+                </div>
+            </section>
+        </div>
+        <div class="wrapper style1">
+            <section id="features" class="container special">
+                <div class="row pub-item2">
+                    <article class="col-test2 col-12-mobile">
+                        <h3><strong> Robots that Enhance Human-to-Human Interactions</strong>
+                        </h3>
+                        <p><img src="images/pic01.jpg" alt="alt text" style="float: left; padding: 10px; max-height: 200px">Successful teams consist of members who discuss ideas in a constructive manner, who feel free to openly discuss their mistakes and
+                            errors, and who are sensitive to and aware of the emotions expressed by their team members. As members of human-robot teams, robots have the ability to shape human-to-human interactions in ways that can benefit team dynamics
+                            and performance. Through several human-subject experiments, our work has investigated the ability of robots to shape several key team dynamics that have been established by the literature to critically influence team performance:
+                            trust (HRI’18, PNAS’20), cohesion (RO-MAN’16), and inclusion (HRI’20).
+                    </article>
+
+
+                    <article class="col-test2  col-12-mobile pub-details">
+                        <h4><strong>Selected Publications</strong> </h4>
+                        <p>
+                            Strohkorb Sebo, S., Traeger, M., Jung, M., & Scassellati, B. (2018). <a href="https://hri.cs.uchicago.edu/publications/HRI_2018_Sebo.pdf"> The Ripple Effects of Vulnerability: The Effects of a Robot's Vulnerable Behavior on Trust in Human-Robot Teams</a>.
+                            In <em> Proceedings of the 2018 ACM/IEEE International Conference on Human-Robot
+                                Interaction (HRI 2018).</em></p>
+                        <p>Traeger, M. L., Strohkorb Sebo, S., Jung, M., Scassellati, B., & Christakis, N. A. (2020). <a href="https://www.pnas.org/content/117/12/6370">Vulnerable Robots Positively Shape Human Conversational Dynamics in a Human-Robot Team</a>.
+                            In <em>Proceedings of the National Academy of Sciences
+                            (PNAS).</em>
+                        </p>
+                        <p>Strohkorb Sebo, S., Dong, L. L., Chang, N., & Scassellati, B. (2020). <a href="https://hri.cs.uchicago.edu/publications/HRI_2020_Sebo_Inclusion.pdf"> Strategies for the Inclusion of Human Members within Human-Robot Teams</a>. In
+                            <em> Proceedings of the 2020 ACM/IEEE International Conference on Human-Robot Interaction</em> (HRI 2020).
+                        </p>
+                        <p>Strohkorb, S., Fukuto, E., Warren, N., Taylor, C., Berry, B., & Scassellati, B. (2016). <a href="https://hri.cs.uchicago.edu/publications/ROMAN-2016.pdf"> Improving Human-Human Collaboration between Children with a Social Robot</a>.
+                            In <em> Proceedings of the 2016 IEEE International Symposium on Robot
+                            and Human Interactive Communication (RO-MAN 2016).</em>
+                        </p>
+                    </article>
+                </div>
+                <br />
+                <div class="row pub-item2">
+                    <article class="col-test2 col-12-mobile">
+                        <h3><strong> Robots that Enhance Human-to-Human Interactions</strong>
+                        </h3>
+                        <p><img src="images/pic01.jpg" alt="alt text" style="float: left; padding: 10px; max-height: 200px">In order for a robot to act optimally in a group context, it is important for the robot to be able to sense and model current group
+                            dynamics. For example, if a robot senses that a group member feels excluded, the robot could affirm that member’s comments when they bring up an idea. Our work has explored methods of modeling social dominance in groups of
+                            young children (ICMI‘15), and psychological safety and inclusion in collaborative adult teams (Frontiers in Psychology ‘20). We have also published a review of literature examining robot interactions with human groups and teams
+                            (CSCW’20).
+                        </p>
+                    </article>
+                    <article class="col-test2  col-12-mobile pub-details">
+                        <h4><strong>Selected Publications</strong> </h4>
+                        <p>
+                            Sebo, S., Stoll, B., Scassellati, B., & Jung, M. F. (2020). <a href="https://hri.cs.uchicago.edu/publications/CSCW_2020_Sebo_Robots_in_Groups_Review.pdf"> Robots in Groups and Teams: a Literature Review</a>. In <em>Proceedings of the ACM on Human-Computer Interaction (CSCW 2020). </em>
+                        </p>
+                        <p>Sebo, S., Dong, L. L., Chang, N., Lewkowicz, M., Schutzman, M., & Scassellati, B. (2020). <a href="https://www.frontiersin.org/articles/10.3389/fpsyg.2020.590181/abstract"> The Influence of Robot Verbal Support on Human Team Members: Encouraging Outgroup Contributions and Suppressing Ingroup Supportive Behavior.</a>
+                            <em>Frontiers in Psychology. </em></p>
+                        <p>Strohkorb, S., Leite, I., Warren, N., & Scassellati, B. (2015, November). <a href="https://hri.cs.uchicago.edu/publications/ICMI-2015.pdf"> Classification of Children's Social Dominance in Group Interactions with Robots</a>. In
+                            <em> Proceedings of the 2015 ACM on International Conference on Multimodal
+                            Interaction (ICMI 2015) </em>.
+                        </p>
+                    </article>
+                </div>
+                <br />
+                <div class="row pub-item2">
+                    <article class="col-test2 col-12-mobile">
+                        <h3><strong> Robots that Enhance Human-to-Human Interactions</strong>
+                        </h3>
+                        <p><img src="images/pic01.jpg" alt="alt text" style="float: left; padding: 10px; max-height: 200px">Each student learns differently and requires individualized support to achieve academic success. Robot tutors have emerged as a promising
+                            technology that can provide quick feedback and tailored assistance to students, helping them to remain motivated and encouraged in learning tasks. Our work has explored the development of computational frameworks to provide
+                            personalized help to students in one-on-one tutoring settings (AAAI’19) as well as helpful prompts to encourage collaboration between students in settings with multiple children (RO-MAN’16).</p>
+                    </article>
+                    <article class="col-test2  col-12-mobile pub-details">
+                        <h4><strong>Selected Publications</strong> </h4>
+                        <p>
+                            Ramachandran, A., Strohkorb Sebo, S., & Scassellati, B. (2019). <a href="https://hri.cs.uchicago.edu/publications/Ramachandran_Sebo_AAAI_2018.pdf"> Personalized Robot Tutoring Using the Assistive Tutor POMDP (AT-POMDP) </a>.
+                            In <em>Proceedings of the AAAI Conference on Artificial Intelligence (AAAI 2019) </em>.
+                        </p>
+                        <p>Strohkorb, S., Fukuto, E., Warren, N., Taylor, C., Berry, B., & Scassellati, B. (2016). <a href="https://hri.cs.uchicago.edu/publications/ROMAN-2016.pdf"> Improving Human-Human Collaboration between Children with a Social Robot</a>.
+                            In <em> Proceedings of the 2016 IEEE International Symposium on Robot
+                            and Human Interactive Communication (RO-MAN 2016)</em>.
+                        </p>
+                    </article>
+                </div>
+                <br />
+                <div class="row pub-item2">
+                    <article class="col-test2 col-12-mobile">
+                        <h3><strong> Robots that Enhance Human-to-Human Interactions</strong>
+                        </h3>
+                        <p><img src="images/pic01.jpg" alt="alt text" style="float: left; padding: 10px; max-height: 200px">As robots become increasingly integrated into our everyday lives, it is essential to study how robots’ actions influence how we think
+                            and how we respond. In some ways, we interact with robots like we would interact with a machine (e.g., a toaster, an ATM), but in other ways, we interact with robots like we would interact with people (e.g., we might yell at
+                            an autonomous car that might cut us off in traffic). We have carefully studied several aspects of social interaction between humans and robots, including human conformity to groups of robots (HRI’18), perceptions of robots
+                            that violate social norms (CogSci’20), and responses to robots that break their trust (HRI’19). </p>
+
+                    </article>
+                    <article class="col-test2  col-12-mobile pub-details">
+                        <h4><strong>Selected Publications</strong> </h4>
+                        <p>
+                            Strohkorb Sebo, S., Krishnamurthi, P., & Scassellati, B. (2019). <a href="https://hri.cs.uchicago.edu/publications/HRI_2019_Sebo_I_dont_believe_you.pdf"> “I Don't Believe You”: Investigating the Effects of Robot Trust Violation and Repair</a>.
+                            <em> In Proceedings of the 2019 ACM/IEEE International Conference on Human-Robot Interaction (HRI 2019).</em>
+                        </p>
+                        <p>Yasuda, S., Doheny, D., Salomons, N., Strohkorb Sebo, S., & Scassellati, B. (2020). <a href="https://hri.cs.uchicago.edu/publications/CogSci2020_Yasuda_perceived_agency.pdf"> Perceived Agency of a Social Norm Violating Robot</a>.
+                            <em> In Proceedings of the Forty Second Conference of the Cognitive Science Society (CogSci 2020)</em>.
+                        </p>
+                        <p> Salomons, N., van der Linden, M., Strohkorb Sebo, S., & Scassellati, B. (2018). <a href="https://hri.cs.uchicago.edu/publications/HRI_2018_Salomons.pdf"> Humans Conform to Robots: Disambiguating Trust, Truth, and Conformity</a>.
+                            <em>In Proceedings of the 2018 ACM/IEEE International Conference on Human-Robot Interaction (HRI 2018) </em>.
+                        </p>
+                    </article>
+                </div>
+                <br />
+
 
             </section>
         </div>
@@ -84,6 +192,7 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/shrink.js"></script>
 
 </body>
 

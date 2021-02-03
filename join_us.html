@@ -37,18 +37,12 @@
                 </header>
             </div>
 
-            <!-- Nav -->
-            <nav id="nav">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="news.html">News</a></li>
-                    <li><a href="people.html">People</a></li>
-                    <li><a href="research.html">Research</a></li>
-                    <li><a href="publications.html">Publications</a></li>
-                    <li><a href="for_lab_members.html">For Lab Members</a></li>
-                    <li><a href="join_us.html">Join Us</a></li>
-                </ul>
-            </nav>
+            <div id="nav-placeholder"></div>
+            <script>
+                $(function() {
+                    $("#nav-placeholder").load("nav.html");
+                });
+            </script>
 
         </div>
 
@@ -132,45 +126,52 @@
                 </header>
                 <div class="row">
                     <article class="col-2 col-12-mobile special">
-                        <a href="images/robots/Nao.png" class="image featured"><img src="images/robots/Nao.png" alt="" height="200" /></a>
                         <header>
                             <h3>Nao V6</h3>
                         </header>
+                        <a href="images/robots/Nao.png" class="image featured feature3"><img src="images/robots/Nao.png" alt="" /></a>
+
                     </article>
                     <article class="col-2 col-12-mobile special">
-                        <a href="images/robots/Franka_Emika.png" class="image featured"><img src="images/robots/Franka_Emika.png" alt="" height="200" /></a>
                         <header>
                             <h3>Franka Emika</h3>
                         </header>
+                        <a href="images/robots/Franka_Emika.png" class="image featured feature2"><img src="images/robots/Franka_Emika.png" alt="" /></a>
+
                     </article>
                     <article class="col-2 col-12-mobile special">
-                        <a href="images/robots/Misty.jpg" class="image featured"><img src="images/robots/Misty.jpg" alt="" height="200" /></a>
                         <header>
                             <h3>Misty</h3>
                         </header>
+                        <a href="images/robots/Misty.jpg" class="image featured feature2"><img src="images/robots/Misty.jpg" alt="" /></a>
+
                     </article>
                     <article class="col-2 col-12-mobile special">
-                        <a href="images/robots/vector.jpg" class="image featured"><img src="images/robots/vector.jpg" alt="" height="200" /></a>
                         <header>
                             <h3>Vector</h3>
                         </header>
+                        <a href="images/robots/vector.jpg" class="image featured feature2"><img src="images/robots/vector.jpg" alt="" /></a>
+
                     </article>
                     <article class="col-2 col-12-mobile special">
-                        <a href="images/robots/Stretch.jpg" class="image featured"><img src="images/robots/Stretch.jpg" alt="" height="200" /></a>
                         <header>
-                            <h3>>Stretch</h3>
+                            <h3>Stretch</h3>
                         </header>
+                        <a href="images/robots/Stretch.png" class="image featured feature2"><img src="images/robots/Stretch.png" alt="" /></a>
+
                     </article>
                     <article class="col-2 col-12-mobile special">
-                        <a href="images/robots/turtlebot3.png" class="image featured"><img src="images/robots/turtlebot3.png" alt="" height="200" /></a>
                         <header>
                             <h3>Turtlebot 3</h3>
                         </header>
+                        <a href="images/robots/turtlebot3.png" class="image featured feature4"><img src="images/robots/turtlebot3.png" alt="" /></a>
+
                     </article>
                 </div>
             </section>
 
         </div>
+
 
         <!-- Footer -->
         <div id="footer-placeholder"></div>
@@ -191,6 +192,8 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/shrink.js"></script>
+
 
 </body>
 
