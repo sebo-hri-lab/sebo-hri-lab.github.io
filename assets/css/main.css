@@ -2083,6 +2083,14 @@
         padding-bottom: 2em;
     }
     
+    .wrapper.formstyle {
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        padding: 20px;
+        text-align: center;
+    }
+    
     .wrapper.style2 {
         padding-top: 0;
     }
