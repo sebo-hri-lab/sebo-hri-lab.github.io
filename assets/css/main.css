@@ -1784,6 +1784,8 @@
     ul.divided {
         list-style: none;
         padding-left: 0;
+        margin: auto;
+        text-align: center;
     }
     
     ul.divided li {
@@ -1823,7 +1825,7 @@
     /* Icons */
     
     ul.icons {
-        width: 100%;
+        width: 105%;
         position: relative;
         background: rgba(128, 128, 128, 0.05);
         border-radius: 4em;
