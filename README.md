@@ -49,6 +49,52 @@ First, in a terminal, `cd` into this directory (uchicago-intro-robotics-winter-2
 python -m http.server
 ```
 
+## Change the password
+
+Currently, the password for the wiki is robots. To change the password, here is how one should go about it. 
+
+1. Go to this website http://www.yaldex.com/FSPassProtect/AsciiEncryption.htm and replace the text in the first box with the desired password
+
+2. Press the button Encrypt Box1 to Box2, and copy the output
+
+3. Go to the file /assets/js/encryption.js and change the variable password in the function passWord() to the output copied earlier
+
+## Add a wiki entry
+
+Currently, the password for the wiki is robots. To change the password, here is how one should go about it. 
+
+1. Go to the for_lab_members.html page 
+    
+    1. Above the comment that says "insert new wiki page" paste the following code
+
+    ```
+        <div class="wrapper style1">
+                <section id="features" class="container special">
+                    <div class="row pub-item2">
+                        <article class="col-9 off-test col-12-mobile pub-details2">
+                            <h3> <a href="/wiki/lab_protocol.html"> Robotics Lab Protocol </a> </h3>
+                            <p>
+                                Accessing the Robotics Lab (JCL 379) for Project Work.
+                            </p>
+                        </article>
+                        <article class="col-2 col-12-mobile pub-venue-short">
+                            <h3>
+                                June 2020
+                            </h3>
+                        </article>
+                    </div>
+                </section>
+            </div>
+    ```
+
+    2. Change the code copy pasted above to fit your needs (ie: change the date in the <h3> tag, change the title in the <p> tag and change the link to the page in the <a> tag)
+
+2. Then, create a new html page in the wiki folder that is the link to the new wiki page
+
+    1. It will be helpful if you copy the template in wiki/wiki_template.html. There are labels that you can use to organize bullet points, put in images, links or text. You may also find the lab_protocol.html page helpful as an example. 
+
+    2. Note on images: all images should be put in the images folder, so they can be found as follows images/image_name.jpg (or .png)
+
 ## TODOs
 
 - Get a new pic to be the landing image that's of the actual UChicago HRI lab space
