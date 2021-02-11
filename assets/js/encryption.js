@@ -8,7 +8,7 @@ function passWord() {
             history.go(-1);
         if (pass1 == unEncrypt(password)) {
             alert('You Got it Right!');
-            window.open('for_lab_members.html');
+            window.location.href = 'for_lab_members.html';
             break;
         }
         testV += 1;
