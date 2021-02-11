@@ -11,12 +11,23 @@ In order to add your picture and a link to your website on the "People" page of 
 2. Put your photo in the `images/people` directory where the name of the image file is your name. 
 
 3. Copy the following html and paste it directly above the commented line `<!-- NEW [STUDENT] ADD HERE -->`. Pay attention to where you put your html, and that your put yourself above the `<!-- NEW UNDERGRAD ADD HERE -->` if you're an undergrad or `<!-- NEW PHD STUDENT ADD HERE -->` if you're a PhD student, etc. 
+   
+   1. There are two options for the html, depending on whether you want to link your personal website, LinkedIn or something else with your name. The first option is above, where a website is linked. The second option, where a website is not linkedin, is listed below. 
 
 ```
                             <article class="col-3 col-12-mobile special">
-                                <a href="#" class="image people"><img src="images/people/IMAGE_FILE_NAME" alt="" /></a>
+                                <a class="image people"><img src="images/people/IMAGE_FILE_NAME" alt="" /></a>
                                 <header>
-                                    <h3><a href="#">YOUR NAME</a></h3>
+                                    <h3><a href="INSERT WEBSITE URL HERE">YOUR NAME</a></h3>
+                                </header>
+                            </article>
+```
+
+```
+                            <article class="col-3 col-12-mobile special">
+                                <a class="image people"><img src="images/people/IMAGE_FILE_NAME" alt="" /></a>
+                                <header>
+                                    <h3>YOUR NAME</h3>
                                 </header>
                             </article>
 ```
@@ -35,7 +46,7 @@ In order to add your picture and a link to your website on the "People" page of 
 
 First, in a terminal, `cd` into this directory (uchicago-intro-robotics-winter-2021-website), then run:
 ```
-python -m SimpleHTTPServer
+python -m http.server
 ```
 
 ## TODOs
@@ -46,10 +57,3 @@ python -m SimpleHTTPServer
 - Add content to the join us page
 - Add some research highlights to the index page
 - Add lab address / location to the footer
-
-
-
-
-
-
-
