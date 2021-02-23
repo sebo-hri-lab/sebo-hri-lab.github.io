@@ -2108,7 +2108,8 @@
     
     #header {
         position: relative;
-        background-image: url("../../images/clip_from_yale_youtube_vid.png");
+        /*background-image: url("../../images/clip_from_yale_youtube_vid.png");*/
+        background-image: url("../../images/hri_lab_2021_cropped_and_darker.JPG");
         background-size: cover;
         background-position: center center;
         background-attachment: fixed;
@@ -2853,6 +2854,7 @@
             left: 0;
             overflow-y: auto;
             position: fixed;
+            text-align: center;
             top: 0;
             width: 100%;
             z-index: 10002;
