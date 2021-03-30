@@ -90,7 +90,7 @@
         margin: 0;
         padding: 0;
         border: 0;
-        font-size: 100%;
+        /*font-size: 100%;*/
         font: inherit;
         vertical-align: baseline;
     }
@@ -176,7 +176,7 @@
     body {
         background: #f0f4f4;
         color: #5b5b5b;
-        font-size: 15pt;
+        font-size: 16pt;
         line-height: 1.85em;
         font-family: 'Source Sans Pro', sans-serif;
         font-weight: 300;
@@ -198,7 +198,7 @@
     input,
     textarea,
     select {
-        font-size: 15pt;
+        font-size: 16pt;
         line-height: 1.85em;
         font-family: 'Source Sans Pro', sans-serif;
         font-weight: 300;
@@ -2600,7 +2600,7 @@
         input,
         textarea,
         select {
-            font-size: 12pt;
+            font-size: 13pt;
             line-height: 1.5em;
         }
         /* Wrapper */
