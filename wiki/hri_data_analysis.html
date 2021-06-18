@@ -1,0 +1,276 @@
+<!DOCTYPE HTML>
+<!--
+    Helios by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+    <title>HRI Lab</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <noscript>
+        <link rel="stylesheet" href="../assets/css/noscript.css" />
+    </noscript>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="https://www.uchicago.edu/favicon-32x32.png">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+</head>
+
+<body class="no-sidebar is-preload">
+    <div id="page-wrapper">
+
+        <!-- Header -->
+        <div id="header">
+
+            <!-- Nav -->
+            <nav id="nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../news.html">News</a></li>
+                    <li><a href="../people.html">People</a></li>
+                    <li><a href="../research.html">Research</a></li>
+                    <li><a href="../publications.html">Publications</a></li>
+                    <li><a href="../for_lab_members.html">For Lab Members</a></li>
+                    <li><a href="../join_us.html">Join Us</a></li>
+                </ul>
+            </nav>
+
+        </div>
+
+
+    </div>
+
+    <div class="wrapper style1">
+
+        <section id="features" class="container special">
+            <header>
+                <h2> Conducting Statistical Analyses of HRI Data </h2>
+            </header>
+        </section>
+    </div>
+
+    <div class="wrapper style1">
+        <section id="features" class="container special">
+            <div class="wrapper style1">
+                <div class="centered-body">
+                    <h3>How Many Participants Should I Recruit? A Guide to Conducting a Power Analysis</h3>
+                    <br/>
+
+                    <p>TODO</p>
+                    
+                </div>
+        </section>
+    </div>
+
+    <div class="wrapper style1">
+        <section id="features" class="container special">
+            <div class="wrapper style1">
+                <div class="centered-body">
+                    <h3>Which Statistics Test Should I Run? A Guide to Conducting a Statistical Analysis on HRI Data for <u>Independent Samples</u></h3>
+                    <br/>
+
+                    <h4>Software Setup</h4>
+                    <p>
+                        I use the <a href="https://www.r-project.org/">R programming language</a> and <a href="https://www.rstudio.com/">RStudio IDE</a> to perform data analysis. I like using R because it's free, has solid online documentation, and enables users to perform a wide array of statistical tests that are not always available on other platforms (e.g., multi-level mixed-effects models). 
+                    </p>
+
+                    <h4>Working with an Example</h4>
+                    <p>
+                        In this HRI statistical analysis guide, we will use an example from one of my prior studies. The main focus of this study was a 30 minute period of time where <b>3 human participants (2 ingroup members, 1 outgroup member)</b> tried to decide which surivial items they would want to bring with them in an imaginary survival scenario. Additionally, one of the participants was designated as the <b>robot liaison</b>, the robot liaison was the only one who could ask the robot for information about the survival items and the environment where they were to be stranded. <b>Thus, this study had a 2 (robot liaison: ingroup member or outgroup member) x 2 (robot backchannels: present or absent) between subjects design</b>. We were interested to see if 1) the robot liaison role and 2) whether or not the robot backchanneled (with utterances like "mm hmm", "yeah") would influence how included and psychologically safe people felt in the group as well as the participants' backchanneling behavior. We surveyed participants before the experiment to get information about their age, gender, prior familiarity with the other participants, extraversion, and emotional intelligence. After the 30 minute interaction, we surveyed participant to assess how included and psychological safe they felt in the group. Through examining logs of the experiment interaction, we (the researchers) counted the number of backchannels produced by the robot and by the group. If you want to find more details about this data, please refer to my <a href="../publications/HRI_2020_Sebo_Inclusion.pdf" target="_blank">HRI 2020</a> and <a href="https://www.frontiersin.org/articles/10.3389/fpsyg.2020.590181/full">Frontiers in Psychology 2020</a> publications.  
+                    </p>
+
+                    <p>
+                        One <b>very important</b> note to make here is that <b>we are considering each group to be 1 data point</b> (we will examine the influence of our independent variables on the aggregated behavior of the entire group). This ensures that each of our data points is <b>independent</b> of all of the other data points in our analysis. All of the tests described in this section are only valid if each sample is independent of the other samples in the dataset. For example, if we considered each participant to be one data point, the participants who were in the same group would not be independent of one another, and the assumptions made by these tests (independent samples) would not hold. 
+                    </p>
+
+                    <div class="row">
+                        <div class="col-3 cod-12-mobile special">
+                        </div>
+                        <div class="col-6 cod-12-mobile special display-img">
+                            <img src="../images/wiki/hri_data_analysis/group_bt_jibo_survival.png" class="img-responsive" alt="Group and Jibo Robot">
+                        </div>
+                        <div class="col-3 cod-12-mobile special">
+                        </div>
+                    </div>
+
+                    <br/>
+                    <h4>Selecting the Right Statistical Test</h4>
+
+                    <p>
+                        The first step to take when choosing which statistics test to run on your data to answer a specific research question is first identifying the following variables: 
+                        <ul>
+                            <li><b>Independent Variable(s)</b> - any variables that the researchers directly manipulate can be considered independent variables, in this example we have 3 possible independent variables: <b>robot liaison identity</b> (ingroup or outgroup member), <b>the presence of robot backchannels</b> (present or absent), and <b>the number of robot backchannels</b></li>
+                            <li><b>Dependent Variable</b> - the dependent variable is the variable that is being studied and is also called the outcome variable</li>
+                            <li><b>Covariate(s)</b> - covariates (or control variables) are a subclass of independent variables, these variables are not the primary variables manipulated by researchers, but may still have an influence on the dependent variables; in this example we have several possible covariates: the gender composition of the group, the average age of the group members, the average prior familiarity of group members with one another, the average extraversion of the group members, the average emotional intelligence of group members</li>
+                        </ul>
+                    </p>
+
+                    <p>
+                        Next, we must consider whether the independent and dependent variables we're investigating are <b>categorical</b> or <b>continuous</b>. 
+                        <ul>
+                            <li><b>Categorical variables</b> can be sorted into categories and do not hold any numeric value, even if they are represented by a number. Here are some examples of categorical variables: gender, the presence of robot backchannels (present or absent), whether or not the group produced more than 100 backchannels (any yes/no variables can automatically be considered categorical).</li>
+                            <li><b>Continuous variables</b> hold numeric values that vary along some numeric range. Continuous variables can be responses to Likert questionnaire ratings (e.g., psychological safety and inclusion ratings), a count of behavior occurrences (e.g., the number of backchannels produced by the human participants), or a numeric observation (e.g., a participant's age).</li>
+                        </ul>
+                    </p>
+
+                    <p>
+                        Now that we have a handle on the types of variables we're dealing with and whether those variables are categorical or continuous, we can now determine what kind of statistical test to run to answer our research question. By answering the following questions you can determine which test you should run: 
+                        <ul>
+                            <li>
+                                Are the <b>independent variable(s)</b> <b><u>categorical</u></b>?
+                                <ul>
+                                    <li>
+                                        Is there <b>one independent variable</b>?
+                                        <ul>
+                                            <li>
+                                                Is the <b>dependent variable <u>categorical</u></b>? 
+                                                <ul>
+                                                    <li>
+                                                        Are there <b><u>no</u> covariates</b>? &#8594; Run a <b><i>Chi Square test</i></b>
+                                                    </li>
+                                                    <li>
+                                                        Are there <b><u>any</u> covariates</b>? &#8594; Run a <b><i>logistic regression</i></b>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                Is the <b>dependent variable <u>continuous</u></b>? 
+                                                <ul>
+                                                    <li>
+                                                        Are there <b><u>no</u> covariates</b>? &#8594; Run a <b><i>t-test</i></b> or a <b><i>1-way ANOVA</i></b> (they are analogous)
+                                                    </li>
+                                                    <li>
+                                                        Are there <b><u>any</u> covariates</b>? &#8594; Run a <b><i>1-way ANOVA</i></b>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        Are there <b>multiple independent variables</b>?
+                                        <ul>
+                                            <li>
+                                                Is the <b>dependent variable <u>categorical</u></b>? &#8594; Run a <b><i>Logistic Regression</i></b>
+                                            </li>
+                                            <li>
+                                                Is the <b>dependent variable <u>continuous</u></b>? &#8594; Run a <b><i>2-Way ANOVA</i></b>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                Are the <b>independent variable(s)</b> <b><u>continuous</u></b>?
+                                <ul>
+                                    <li>
+                                        Is the <b>dependent variable <u>categorical</u></b>?
+                                        <ul>
+                                            <li>
+                                                Are there <b><u>no</u> covariates</b>? &#8594; Run a <b><i>Pearson correlation</i></b> or a <b><i>logistic regression</i></b>
+                                            </li>
+                                            <li>
+                                                Are there <b><u>any</u> covariates</b>? &#8594; Run a <b><i>logistic regression</i></b>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        Is the <b>dependent variable <u>continuous</u></b>?
+                                        <ul>
+                                            <li>
+                                                Are there <b><u>no</u> covariates</b>? &#8594; Run a <b><i>Pearson correlation</i></b>
+                                            </li>
+                                            <li>
+                                                Are there <b><u>any</u> covariates</b>? &#8594; Run a <b><i>linear regression</i></b>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </p>
+
+                    <br/>
+                    <h4>Examples of Each of the Aforementioned Statistical Tests in R</h4>
+
+                    <p>
+                        In the following files you will find 1) a sample data file from the example described above and 2) an R file that gives an example of each of the statistical tests mentioned above using the example data:
+                        <ul>
+                            <li>Data file: <a href="../files/wiki/hri_data_analysis/jibo_survival_experiment_data_independent_samples.csv" download>jibo_survival_experiment_data_independent_samples.csv</a></li>
+                            <li>R file: <a href="../files/wiki/hri_data_analysis/stats_test_for_independent_samples.R" download>stats_test_for_independent_samples.R</a></li>
+                        </ul>
+                    </p>
+
+
+
+                </div>
+        </section>
+    </div>
+
+    <div class="wrapper style1">
+        <section id="features" class="container special">
+            <div class="wrapper style1">
+                <div class="centered-body">
+                    <h3>Which Statistics Test Should I Run? A Guide to Conducting a Statistical Analysis on HRI Data for <u>Grouped (Non-Independent) Samples</u></h3>
+                    <br/>
+
+                    <p>TODO</p>
+<!-- 
+                    <h4>Software Setup</h4>
+                    <p>
+                        Like with statistical analysis on independent samples data, I use the <a href="https://www.r-project.org/">R programming language</a> and <a href="https://www.rstudio.com/">RStudio IDE</a> to perform my data analysis. One of the primary reasons I use R is because R has the best documentation and ability to use a wide array of statistical tests that are not always available on other platforms (e.g., multi-level mixed-effects models that will be described below). 
+                    </p>
+
+                    <h4>Working with an Example</h4>
+                    <p>
+                          
+                    </p>
+
+<!--                     <div class="row">
+                        <div class="col-3 cod-12-mobile special">
+                        </div>
+                        <div class="col-6 cod-12-mobile special display-img">
+                            <img src="../images/wiki/hri_data_analysis/group_bt_jibo_survival.png" class="img-responsive" alt="Group and Jibo Robot">
+                        </div>
+                        <div class="col-3 cod-12-mobile special">
+                        </div>
+                    </div> -->
+
+<!--                     <br/>
+                    <h4>Selecting the Right Statistical Test</h4>
+                    <p> -->
+
+
+                </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+        <script>
+            $(function() {
+                $("#footer-placeholder").load("../footer.html");
+            });
+        </script>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.dropotron.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
