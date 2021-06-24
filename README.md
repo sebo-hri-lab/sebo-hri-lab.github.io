@@ -94,12 +94,3 @@ Currently, the password for the wiki is robots. To change the password, here is 
     1. It will be helpful if you copy the template in wiki/wiki_template.html. There are labels that you can use to organize bullet points, put in images, links or text. You may also find the lab_protocol.html page helpful as an example. 
 
     2. Note on images: all images should be put in the images folder, so they can be found as follows images/image_name.jpg (or .png)
-
-## TODOs
-
-- Get a new pic to be the landing image that's of the actual UChicago HRI lab space
-- Add first news items (and format the news page and the news on the index page nicely)
-- Add content to the research page
-- Add content to the join us page
-- Add some research highlights to the index page
-- Add lab address / location to the footer
