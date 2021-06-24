@@ -51,7 +51,7 @@
 
         <section id="features" class="container special">
             <header>
-                <h2> Conducting Statistical Analyses of HRI Data </h2>
+                <h2> How To Conduct Statistical Analysis of HRI Data </h2>
             </header>
         </section>
     </div>
@@ -60,10 +60,38 @@
         <section id="features" class="container special">
             <div class="wrapper style1">
                 <div class="centered-body">
-                    <h3>How Many Participants Should I Recruit? A Guide to Conducting a Power Analysis</h3>
+                    <h3>How Many Participants Should I Recruit? A Guide to Conducting a Power Analysis to Determine Experiment Sample Sizes</h3>
                     <br/>
 
-                    <p>TODO</p>
+                    <!-- TOOD: add explanation of what power is and why this analysis is good to do -->
+
+                    <p>Conducting a power analysis is the best way to answer the question, <i>"How many participants should I recruit for my HRI study?"</i> To conduct a power analysis, I'd suggest using the free and well-used <a href="http://www.gpower.hhu.de/">G*Power</a> tool. </p>
+
+                    <p>
+                        When calculating sample size using a power analysis, G*Power is pretty easy to follow. You select the statistical test you plan to run, the type of power analysis you want to conduct, and input some parameters -- and voila, you have the number of participants you should run in order to ensure that your study is sufficiently powered. Now, here are some notes on how to determine your parameter values: 
+                        <ul>
+                            <li><b>Effect size</b>: The best way to determine an effect size is to find a human subjects study examining a similar research question to yours and use the effect size reported in that other study. If you cannot find a listed effect size, it's best practice to assume a medium effect size. I've found this <a href="https://imaging.mrc-cbu.cam.ac.uk/statswiki/FAQ/effectSize">Rules of thumb on magnitudes of effect sizes</a> web page to be helpful in determining small/medium/large effect sizes and also converting between effect sizes. </li>
+                            <li><b>&alpha; err prob</b>: Typically, we use a value of 0.05 here, representing the fact that statistical significance is determined by p-values less than 0.05.</li>
+                            <li><b>Power (1-&beta; err prob)</b>: This represents the desired statistical power of the study. For in-person human subjects studies, I recommend going with a power of 0.80 (or 80%). For online studies (e.g., Prolific, AMT), you may want to go with a higher power of 0.90-0.95 (09%-95%).</li>
+                            <li><b>Number of groups</b>: This represents the number of experimental between subjects groups your study contains.</li>
+                            <li><b>Numerator df</b>: You may be asked to detail the number of degrees of freedom your study contains. I've found this <a href="http://www.rondotsch.nl/degrees-of-freedom/">Degrees of Freedom Tutorial</a> helpful in better understanding how to determine the number of degrees of freedom a study has.</li>
+                            <li><b>Number of measurements</b>: If you are conducting a study where you repeatedly take measurements of the same participant, this value will represent how many measurements each participant receives. </li>
+                        </ul>
+                    </p>
+
+                    <p>
+                        The following screenshot represents an example of a power computation for a 1-way ANOVA analysis with a medium effect size and 80% power for a 3 condition between subjects design. Based on this analysis, I should have a total sample size of 159. 159/3 = 53, so I should recruit and run 53 participants in each of my 3 between subjects conditions.
+                    </p>
+
+                    <div class="row">
+                        <div class="col-3 cod-12-mobile special">
+                        </div>
+                        <div class="col-6 cod-12-mobile special display-img">
+                            <img src="../images/wiki/hri_data_analysis/g_power_example.png" class="img-responsive" alt="Group and Jibo Robot">
+                        </div>
+                        <div class="col-3 cod-12-mobile special">
+                        </div>
+                    </div>
                     
                 </div>
         </section>
