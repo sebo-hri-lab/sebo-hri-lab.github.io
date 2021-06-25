@@ -3,7 +3,7 @@ rm(list=ls())
 cat("\014")
 
 # specify the directory that the csv file is in and the csv file name 
-setwd("~/Documents/UChicago/Courses/Topics in HRI/Fall 2020/Presentations/Statistics HRI Guide/")
+# setwd("Statistics HRI Guide/")
 jibo_is_data <- read.csv("jibo_survival_experiment_data_independent_samples.csv", header=T)
 
 # indicate missing data 

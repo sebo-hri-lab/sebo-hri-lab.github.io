@@ -248,31 +248,102 @@
                     <h3>Which Statistics Test Should I Run? A Guide to Conducting a Statistical Analysis on HRI Data for <u>Grouped (Non-Independent) Samples</u></h3>
                     <br/>
 
-                    <p>TODO</p>
-<!-- 
                     <h4>Software Setup</h4>
                     <p>
-                        Like with statistical analysis on independent samples data, I use the <a href="https://www.r-project.org/">R programming language</a> and <a href="https://www.rstudio.com/">RStudio IDE</a> to perform my data analysis. One of the primary reasons I use R is because R has the best documentation and ability to use a wide array of statistical tests that are not always available on other platforms (e.g., multi-level mixed-effects models that will be described below). 
+                        Like with statistical analysis on independent samples data, I use the <a href="https://www.r-project.org/">R programming language</a> and <a href="https://www.rstudio.com/">RStudio IDE</a> to perform my data analysis. One of the primary reasons I use R is because R has the best documentation and ability to use a wide array of statistical tests for grouped samples that are not always available on other platforms (e.g., the multi-level mixed-effects models that will be described below). 
                     </p>
 
                     <h4>Working with an Example</h4>
                     <p>
-                          
+                          For our grouped samples analysis, we'll use another example from one of my prior studies. This time, we will consider <b><u>each person to be one individual data point</u>, where each individual participant is "grouped" with the other participants that they interacted with during the study</b>. For this study, we had three participants and one Nao robot completing a collaborative task of constructing railroad routes on a tablet screen. If each individual succeeded in building a valid section of the railroad route, the team would succeed that round. However, if even one member failed to build a valid railroad route section, the team would fail that round. There were 30 rounds of this task during the experiment. At the end of every round the robot would either 1) make a vulnerable utterance, 2) make a neutral utterance, or 3) say nothing. These represented our <b>3 between subjects conditions: vulnerable robot, neutral robot, and silent robot</b>. We were interested to see how the robot's utterances would shape how people viewed the robot and how participants interacted during the game (e.g., if they made a mistake did they explain it to the group?). If you want to find out more about the data, you can refer to <a href="../publications/HRI_2018_Sebo.pdf">my HRI 2018 paper</a>, <a href="https://www.pnas.org/content/117/12/6370">my PNAS 2020 paper</a>, and/or <a href="https://sarahsebo.com/documents/Sarah_Sebo_Dissertation_2020.pdf">my dissertation</a>.
                     </p>
 
-<!--                     <div class="row">
+                    <div class="row">
                         <div class="col-3 cod-12-mobile special">
                         </div>
                         <div class="col-6 cod-12-mobile special display-img">
-                            <img src="../images/wiki/hri_data_analysis/group_bt_jibo_survival.png" class="img-responsive" alt="Group and Jibo Robot">
+                            <img src="../images/research-images/building_trust.jpg" class="img-responsive" alt="Group and Jibo Robot">
                         </div>
                         <div class="col-3 cod-12-mobile special">
                         </div>
-                    </div> -->
+                    </div>
 
-<!--                     <br/>
+                    <br/>
+                    <h4>Mixed-Effects Models</h4>
+
+                    <p>
+                        Because the data associated with each participant is not independent of the rest of the participants' data, we cannot use the tests outlined in the prior section like t-tests and ANOVAs. Instead, we must use a <b>mixed-effects model</b> which captures both fixed effects and random effects. <b>Fixed effects</b> are effects that we can capture and are non-random, including most independent variables (e.g., experimental condition variables, covariates). <b>Random effects</b> represent random variables in a statistical model. The random effect that we'll be controlling for in HRI analyses with grouped samples is the groupings of participants. For example, if participants 1, 2, and 3 are in group A and participants 4, 5, and 6 are in group B we can have one variable in our model that captures participant groups, where the "group" for participant 1 is A and the "group" for participant 5 is B. 
+                    </p>
+
+                    <p>
+                        While specifying the random effect in a mixed-effects model, you will also have to specify how that random effect relates to the intercept and slope of the model. I've typically always used a specification of a random intercept with a fixed mean for the random effects I've dealt with (which have exclusively been applied to participants in groups). In R this translates to specifying the random effect as: <b>(1 | group)</b>, assuming that "group" is the variable name representing my random effect.
+                    </p>
+
+                    <p>
+                        Here are some other resources I'd recommend checking out on mixed-effects models:
+                        <ul>
+                            <li><a href="https://m-clark.github.io/mixed-models-with-R/random_intercepts.html">Mixed Models with R</a> by Github user m-clark</li>
+                            <li><a href="https://www.rensvandeschoot.com/tutorials/lme4/">LME4 Tutorial: Popularity Data</a> by Rens van de Schoot</li>
+                        </ul>
+                    </p>
+
+                    <br/>
                     <h4>Selecting the Right Statistical Test</h4>
-                    <p> -->
+                    <p>
+                        The selection process for the right statistical test is simpler for grouped samples, however, the process of fitting the model is more complex. When determining which statistics test to run, the main determining factor is whether the dependent variable is categorical or continuous: 
+                        <ul>
+                            <li>
+                                Is the <b>dependent variable <u>categorical</u></b>? &#8594; Run a <b><i>generalized linear miexed-effects model</i></b> with a binomial family and logit link
+                                <ul>
+                                    <li>I typically use the <b>glmer</b> function from the <b>lme4</b> R package with the additional argument: <b>family=binomial(link = "logit")</b></li>
+                                </ul>
+                            </li>
+                            <li>
+                                Is the <b>dependent variable <u>categorical</u></b>? &#8594; Run a <b><i>linear mixed-effects model</i></b>
+                                <ul>
+                                    <li>I typically use the <b>lmer</b> function from the <b>lme4</b> R package</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </p>
+
+                    <br/>
+                    <h4>Achieving a Good Model Fit</h4>
+
+                    <p>
+                        For these mixed-effect models, one way to refine the statistical model is to find the model with the best fit by systematically eliminating covariates that do not have a significant influence on the model's outcomes. I have modeled how to do this in the example R files below. Basically, the process involves running the mixed-effects model (with REML=FALSE if you're using a lmer model) and eliminating one-by-one covariates that have a non-significant influence over the model's outcome variable - each time eliminating the covariate with the largest p-value as long as it's not lower than 0.05. Once you've gone through this process, you can compare the model fits for all of those models by running an ANOVA test on the models. The ANOVA will output AIC (Akaike Information Criterion) and BIC (Bayesian Information Criterion), the lower these values are, the better the model fit. Compared with AIC, BIC imposes a larger penalty for including more variables and prefers a less complex model. You can choose either criterion to use to select the model with the best fit, and then choose the model that has the lowest value of the criterion you choose. Then, you can run the final version of that model (with REML=TRUE if you're using a lmer model) and you have your end result. 
+                    </p>
+
+                    <p>
+                        There are a few other tests that are good to do in order to ensure a good model fit (which are included in the examples provided): 
+                        <ul>
+                            <li>ensuring that plots of the residuals don't contain values greater than 3 standard deviations away from the mean and that there aren't any trends</li>
+                            <li>plotting the dependent variable (y-axis) against the model predictions (x-axis) to ensure that the model seems to be fitting well (data points are clustered around the prediction line)</li>
+                        </ul>
+                    </p>
+
+                    <br/>
+                    <h4>Examples of Each of the Aforementioned Statistical Tests in R</h4>
+
+                    <p>
+                        For each of the two tests described above, you will find 1) a sample data file and 2) an R file that provides an example of using the test on the example data:
+                        <ul>
+                            <li>
+                                Categorical dependent variable evaluated with the generalized linear mixed-effects model
+                                <ul>
+                                    <li>Data file: <a href="../files/wiki/hri_data_analysis/nao_vulnerability_experiment_repeated_measures_data.csv" download>nao_vulnerability_experiment_repeated_measures_data.csv</a></li>
+                                    <li>R file: <a href="../files/wiki/hri_data_analysis/stats_test_for_grouped_samples_categorical_dv.R" download>stats_test_for_grouped_samples_categorical_dv.R</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                Continuous dependent variable evaluated with the linear mixed-effects model
+                                <ul>
+                                    <li>Data file: <a href="../files/wiki/hri_data_analysis/nao_vulnerability_experiment_survey_data.csv" download>nao_vulnerability_experiment_survey_data.csv</a></li>
+                                    <li>R file: <a href="../files/wiki/hri_data_analysis/stats_test_for_grouped_samples_continuous_dv.R" download>stats_test_for_grouped_samples_continuous_dv.R</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </p>
 
 
                 </div>
