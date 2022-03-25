@@ -1714,8 +1714,8 @@
     .image.featured-news {
         display: block;
         max-height: 100%;
-        margin-right: 0px;
-        margin-left: 10px;
+        margin-right: 20%;
+        margin-left: 20%;
         margin-top: 10px;
         margin-bottom: 20px;
         width: 60%;
