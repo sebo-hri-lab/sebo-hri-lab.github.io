@@ -1722,6 +1722,18 @@
         width: 60%;
     }
 
+    /* Center embedded videos in news blocks similar to featured-news images */
+    .featured.news { text-align: center; }
+    .featured.news iframe {
+        display: inline-block;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        width: 60% !important;
+        max-width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+    }
+
 
     .image.feature2 {
         max-width: 100%;
@@ -2738,6 +2750,18 @@
             width: 90%;
             height: 200px;
             object-fit: cover;
+        }
+        /* Responsive centering for embedded videos in news blocks */
+        .featured.news { text-align: center; }
+        .featured.news iframe {
+            display: inline-block;
+            /* match image spacing on small screens */
+            margin-top: 10px;
+            margin-bottom: 20px;
+            width: 90% !important;
+            max-width: 100%;
+            height: auto;
+            aspect-ratio: 16 / 9;
         }
         .image.people {
             margin: 0 0 1em 0;
