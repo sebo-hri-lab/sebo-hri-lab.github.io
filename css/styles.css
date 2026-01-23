@@ -570,12 +570,26 @@ p {
 
 @media (max-width: 768px) {
   .research-content {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
   
   .research-image {
-    flex: 1;
+    flex: 0;
     width: 100%;
+    margin-bottom: 1rem;
+    max-height: 250px;
+    overflow: hidden;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .research-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
   }
 }
 
@@ -864,6 +878,18 @@ footer a:hover {
 
 /* Responsive */
 @media (max-width: 768px) {
+  .container {
+    padding: 0 0.75rem;
+  }
+
+  main {
+    padding: 2rem 0.75rem;
+  }
+
+  .hero {
+    padding: 1.5rem 0.75rem;
+  }
+
   nav ul {
     gap: 1rem;
     font-size: 0.9rem;
