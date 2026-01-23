@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab Wiki - HRI Lab</title>
+  <link rel="icon" href="../images/short-logo-color.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    .wiki-lock-card {
+      max-width: 520px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 28px 24px;
+      text-align: center;
+      background: #fff;
+      border: 1px solid #e4e8f0;
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    }
+
+    .wiki-lock-card p {
+      margin: 0 0 18px;
+      font-size: 1.05rem;
+      color: #2d3a4a;
+    }
+
+    .wiki-lock-card .cta-button {
+      width: 100%;
+      max-width: 240px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="container">
+      <a href="../index.html" class="logo">
+        <img src="../images/short-logo-color.png" alt="HRI Lab Logo">
+        HRI Lab
+      </a>
+      <button class="hamburger" onclick="toggleMenu()">&#9776;</button>
+      <ul id="nav-menu" class="nav-menu">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="people.html">People</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="wiki.html" class="active">Wiki</a></li>
+        <li><a href="join-us.html">Join Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <h1>HRI Lab Wiki</h1>
+    <p>For use by HRI lab members only (password required)</p>
+  </div>
+
+  <!-- Main Content -->
+  <main>
+    <div class="container">
+      <div id="wiki-locked" class="wiki-lock-card">
+        <p>Please enter the password to access the wiki.</p>
+        <button class="cta-button" onclick="requestWikiAccess()">Enter Password</button>
+      </div>
+      <div id="wiki-content" style="display:none;">
+        <h2>Wiki Pages</h2>
+        <ul class="resource-list">
+          <li class="resource-item">
+            <h3>For New Members</h3>
+            <p>Helpful information for new HRI lab members</p>
+            <a href="wiki-entries/for-new-members.html">Open →</a>
+          </li>
+          <li class="resource-item">
+            <h3>Running a Human-Subjects Study at a CDR Lab</h3>
+            <p>Guide for how to run a human-subjects study at one of the CDR Labs (including Mindworks)</p>
+            <a href="wiki-entries/running-human-subjects-study-cdr.html">Open →</a>
+          </li>
+          <li class="resource-item">
+            <h3>HRI Lab Robot & Equipment Inventory</h3>
+            <p>An <a href="https://docs.google.com/spreadsheets/d/1AhIfypQCl2wet9b7RpZHoyoJS8AevmJQA9DBMx8_RTg/edit?usp=sharing">inventory</a> of our robots and equipment</p>
+            <a href="wiki-entries/hri-lab-robot-equipment-inventory.html">Open →</a>
+          </li>
+          <li class="resource-item">
+            <h3>Pre-registration Guide</h3>
+            <p>Guide for how pre-register your human-subjects study</p>
+            <a href="wiki-entries/preregistration-guide.html">Open →</a>
+          </li>
+          <li class="resource-item">
+            <h3>Conducting Statistical Analyses of HRI Data</h3>
+            <p>How to conduct statistical analysis of HRI data (power analyses, ANOVAs, regressions, etc.)</p>
+            <a href="wiki-entries/conducting-statistical-analyses-hri-data.html">Open →</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 UChicago Human-Robot Interaction Lab. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const navMenu = document.getElementById('nav-menu');
+      navMenu.classList.toggle('active');
+    }
+
+    function requestWikiAccess() {
+      const pwd = prompt('Enter wiki password:');
+      if (pwd === 'robots') {
+        document.getElementById('wiki-locked').style.display = 'none';
+        document.getElementById('wiki-content').style.display = 'block';
+      } else if (pwd !== null) {
+        alert('Incorrect password.');
+      }
+    }
+  </script>
+</body>
+</html>

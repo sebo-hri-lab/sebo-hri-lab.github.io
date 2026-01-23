@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HRI Lab Robot & Equipment Inventory - HRI Lab Wiki</title>
+  <link rel="icon" href="../../images/short-logo-color.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <a href="../../index.html" class="logo">
+        <img src="../../images/short-logo-color.png" alt="HRI Lab Logo">
+        HRI Lab
+      </a>
+      <button class="hamburger" onclick="toggleMenu()">&#9776;</button>
+      <ul id="nav-menu" class="nav-menu">
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../research.html">Research</a></li>
+        <li><a href="../people.html">People</a></li>
+        <li><a href="../publications.html">Publications</a></li>
+        <li><a href="../resources.html">Resources</a></li>
+        <li><a href="../wiki.html" class="active">Wiki</a></li>
+        <li><a href="../join-us.html">Join Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <h1>HRI Lab Robot &amp; Equipment Inventory</h1>
+  </div>
+
+  <main>
+    <div class="container wiki-entry">
+      <section class="wiki-section">
+        <h2>Robot & Equipment Inventory</h2>
+
+        <p>
+            <a href="https://docs.google.com/spreadsheets/d/1AhIfypQCl2wet9b7RpZHoyoJS8AevmJQA9DBMx8_RTg/edit?usp=sharing">Here is the link to the HRI lab robot & equipment inventory</a>.
+        </p>
+
+        <p>
+            Please update this inventory: 
+            <ul>
+                <li>Whenever you <b>start using</b> a robot / device for your project (denoting that you're using it)</li>
+                <li>Whenever you <b>bring any robot / device outside of JCL 379</b> (so we know where everything is)</li>
+                <li>Whenever you notice that any robot / device is <b>broken</b> or not working as it should be</li>
+            </ul>
+        </p>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 UChicago Human-Robot Interaction Lab. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const navMenu = document.getElementById('nav-menu');
+      navMenu.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conducting Statistical Analyses of HRI Data - HRI Lab Wiki</title>
+  <link rel="icon" href="../../images/short-logo-color.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <a href="../../index.html" class="logo">
+        <img src="../../images/short-logo-color.png" alt="HRI Lab Logo">
+        HRI Lab
+      </a>
+      <button class="hamburger" onclick="toggleMenu()">&#9776;</button>
+      <ul id="nav-menu" class="nav-menu">
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../research.html">Research</a></li>
+        <li><a href="../people.html">People</a></li>
+        <li><a href="../publications.html">Publications</a></li>
+        <li><a href="../resources.html">Resources</a></li>
+        <li><a href="../wiki.html" class="active">Wiki</a></li>
+        <li><a href="../join-us.html">Join Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <h1>Conducting Statistical Analyses of HRI Data</h1>
+  </div>
+
+  <main>
+    <div class="container wiki-entry">
+      <section class="wiki-section">
+        <h2>How Many Participants Should I Recruit? A Guide to Conducting a Power Analysis to Determine Experiment Sample Sizes</h2>
+
+        <p>Conducting a power analysis is the best way to answer the question, <i>"How many participants should I recruit for my HRI study?"</i> To conduct a power analysis, I'd suggest using the free and well-used <a href="http://www.gpower.hhu.de/">G*Power</a> tool. </p>
+
+        <p>
+            When calculating sample size using a power analysis, G*Power is pretty easy to follow. You select the statistical test you plan to run, the type of power analysis you want to conduct, and input some parameters -- and voila, you have the number of participants you should run in order to ensure that your study is sufficiently powered. Now, here are some notes on how to determine your parameter values:
+            <ul>
+                <li><b>Effect size</b>: The best way to determine an effect size is to find a human subjects study examining a similar research question to yours and use the effect size reported in that other study. If you cannot find a listed effect size, it's best practice to assume a medium effect size. I've found this <a href="https://imaging.mrc-cbu.cam.ac.uk/statswiki/FAQ/effectSize">Rules of thumb on magnitudes of effect sizes</a> web page to be helpful in determining small/medium/large effect sizes and also converting between effect sizes. </li>
+                <li><b>&alpha; err prob</b>: Typically, we use a value of 0.05 here, representing the fact that statistical significance is determined by p-values less than 0.05.</li>
+                <li><b>Power (1-&beta; err prob)</b>: This represents the desired statistical power of the study. For in-person human subjects studies, I recommend going with a power of 0.80 (or 80%). For online studies (e.g., Prolific, AMT), you may want to go with a higher power of 0.90-0.95 (09%-95%).</li>
+                <li><b>Number of groups</b>: This represents the number of experimental between subjects groups your study contains.</li>
+                <li><b>Numerator df</b>: You may be asked to detail the number of degrees of freedom your study contains. I've found this <a href="http://www.rondotsch.nl/degrees-of-freedom/">Degrees of Freedom Tutorial</a> helpful in better understanding how to determine the number of degrees of freedom a study has.</li>
+                <li><b>Number of measurements</b>: If you are conducting a study where you repeatedly take measurements of the same participant, this value will represent how many measurements each participant receives. </li>
+            </ul>
+        </p>
+
+        <p>
+            The following screenshot represents an example of a power computation for a 1-way ANOVA analysis with a medium effect size and 80% power for a 3 condition between subjects design. Based on this analysis, I should have a total sample size of 159. 159/3 = 53, so I should recruit and run 53 participants in each of my 3 between subjects conditions.
+        </p>
+
+        <div style="text-align: center; margin: 2rem 0;">
+          <img src="../../images/wiki/hri_data_analysis/g_power_example.png" alt="G*Power example showing sample size calculation" style="max-width: 100%; height: auto; border-radius: 6px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);">
+        </div>
+
+      </section>
+
+      <section class="wiki-section">
+        <h2>Which Statistics Test Should I Run? A Guide to Conducting a Statistical Analysis on HRI Data for <u>Independent Samples</u></h2>
+
+        <h3>Software Setup</h3>
+        <p>
+            I use the <a href="https://www.r-project.org/">R programming language</a> and <a href="https://www.rstudio.com/">RStudio IDE</a> to perform data analysis. I like using R because it's free, has solid online documentation, and enables users to perform a wide array of statistical tests that are not always available on other platforms (e.g., multi-level mixed-effects models).
+        </p>
+
+        <h3>Working with an Example</h3>
+        <p>
+            In this HRI statistical analysis guide, we will use an example from one of my prior studies. The main focus of this study was a 30 minute period of time where <strong>3 human participants (2 ingroup members, 1 outgroup member)</strong> tried to decide which survival items they would want to bring with them in an imaginary survival scenario. Additionally, one of the participants was designated as the <strong>robot liaison</strong>, the robot liaison was the only one who could ask the robot for information about the survival items and the environment where they were to be stranded. <strong>Thus, this study had a 2 (robot liaison: ingroup member or outgroup member) x 2 (robot backchannels: present or absent) between subjects design</strong>. We were interested to see if 1) the robot liaison role and 2) whether or not the robot backchanneled (with utterances like "mm hmm", "yeah") would influence how included and psychologically safe people felt in the group as well as the participants' backchanneling behavior. We surveyed participants before the experiment to get information about their age, gender, prior familiarity with the other participants, extraversion, and emotional intelligence. After the 30 minute interaction, we surveyed participant to assess how included and psychological safe they felt in the group. Through examining logs of the experiment interaction, we (the researchers) counted the number of backchannels produced by the robot and by the group. If you want to find more details about this data, please refer to my <a href="../../publications/HRI_2020_Sebo_Inclusion.pdf" target="_blank">HRI 2020</a> and <a href="https://www.frontiersin.org/articles/10.3389/fpsyg.2020.590181/full">Frontiers in Psychology 2020</a> publications.
+        </p>
+
+        <p>
+            One <strong>very important</strong> note to make here is that <strong>we are considering each group to be 1 data point</strong> (we will examine the influence of our independent variables on the aggregated behavior of the entire group). This ensures that each of our data points is <strong>independent</strong> of all of the other data points in our analysis. All of the tests described in this section are only valid if each sample is independent of the other samples in the dataset. For example, if we considered each participant to be one data point, the participants who were in the same group would not be independent of one another, and the assumptions made by these tests (independent samples) would not hold.
+        </p>
+
+        <div style="text-align: center; margin: 2rem 0;">
+          <img src="../../images/wiki/hri_data_analysis/group_bt_jibo_survival.png" alt="Example study setup showing group interaction with robot" style="max-width: 50%; height: auto; border-radius: 6px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);">
+        </div>
+
+        <h3>Selecting the Right Statistical Test</h3>
+
+        <p>
+            The first step to take when choosing which statistics test to run on your data to answer a specific research question is first identifying the following variables:
+            <ul>
+                <li><strong>Independent Variable(s)</strong> - any variables that the researchers directly manipulate can be considered independent variables, in this example we have 3 possible independent variables: <strong>robot liaison identity</strong> (ingroup or outgroup member), <strong>the presence of robot backchannels</strong> (present or absent), and <strong>the number of robot backchannels</strong></li>
+                <li><strong>Dependent Variable</strong> - the dependent variable is the variable that is being studied and is also called the outcome variable</li>
+                <li><strong>Covariate(s)</strong> - covariates (or control variables) are a subclass of independent variables, these variables are not the primary variables manipulated by researchers, but may still have an influence on the dependent variables; in this example we have several possible covariates: the gender composition of the group, the average age of the group members, the average prior familiarity of group members with one another, the average extraversion of the group members, the average emotional intelligence of group members</li>
+            </ul>
+        </p>
+
+        <p>
+            Next, we must consider whether the independent and dependent variables we're investigating are <strong>categorical</strong> or <strong>continuous</strong>.
+            <ul>
+                <li><strong>Categorical variables</strong> can be sorted into categories and do not hold any numeric value, even if they are represented by a number. Here are some examples of categorical variables: gender, the presence of robot backchannels (present or absent), whether or not the group produced more than 100 backchannels (any yes/no variables can automatically be considered categorical).</li>
+                <li><strong>Continuous variables</strong> hold numeric values that vary along some numeric range. Continuous variables can be responses to Likert questionnaire ratings (e.g., psychological safety and inclusion ratings), a count of behavior occurrences (e.g., the number of backchannels produced by the human participants), or a numeric observation (e.g., a participant's age).</li>
+            </ul>
+        </p>
+
+        <p>
+            Now that we have a handle on the types of variables we're dealing with and whether those variables are categorical or continuous, we can now determine what kind of statistical test to run to answer our research question. By answering the following questions you can determine which test you should run:
+            <ul>
+                <li>
+                    Are the <strong>independent variable(s)</strong> <strong><u>categorical</u></strong>?
+                    <ul>
+                        <li>
+                            Is there <strong>one independent variable</strong>?
+                            <ul>
+                                <li>
+                                    Is the <strong>dependent variable <u>categorical</u></strong>?
+                                    <ul>
+                                        <li>
+                                            Are there <strong><u>no</u> covariates</strong>? &#8594; Run a <strong><i>Chi Square test</i></strong>
+                                        </li>
+                                        <li>
+                                            Are there <strong><u>any</u> covariates</strong>? &#8594; Run a <strong><i>logistic regression</i></strong>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    Is the <b>dependent variable <u>continuous</u></b>?
+                                    <ul>
+                                        <li>
+                                            Are there <strong><u>no</u> covariates</strong>? &#8594; Run a <strong><i>t-test</i></strong> or a <strong><i>1-way ANOVA</i></strong> (they are analogous)
+                                        </li>
+                                        <li>
+                                            Are there <strong><u>any</u> covariates</strong>? &#8594; Run a <strong><i>1-way ANOVA</i></strong>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            Are there <strong>multiple independent variables</strong>?
+                            <ul>
+                                <li>
+                                    Is the <strong>dependent variable <u>categorical</u></strong>? &#8594; Run a <strong><i>Logistic Regression</i></strong>
+                                </li>
+                                <li>
+                                    Is the <strong>dependent variable <u>continuous</u></strong>? &#8594; Run a <strong><i>2-Way ANOVA</i></strong>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    Are the <strong>independent variable(s)</strong> <strong><u>continuous</u></strong>?
+                    <ul>
+                        <li>
+                            Is the <b>dependent variable <u>categorical</u></b>?
+                            <ul>
+                                <li>
+                                    Are there <strong><u>no</u> covariates</strong>? &#8594; Run a <strong><i>Pearson correlation</i></strong> or a <strong><i>logistic regression</i></strong>
+                                </li>
+                                <li>
+                                    Are there <b><u>any</u> covariates</b>? &#8594; Run a <b><i>logistic regression</i></b>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            Is the <b>dependent variable <u>continuous</u></b>?
+                            <ul>
+                                <li>
+                                    Are there <b><u>no</u> covariates</b>? &#8594; Run a <b><i>Pearson correlation</i></b>
+                                </li>
+                                <li>
+                                    Are there <strong><u>any</u> covariates</strong>? &#8594; Run a <strong><i>linear regression</i></strong>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </p>
+
+        <h3>Examples of Each of the Aforementioned Statistical Tests in R</h3>
+
+        <p>
+            In the following files you will find 1) a sample data file from the example described above and 2) an R file that gives an example of each of the statistical tests mentioned above using the example data:
+            <ul>
+                <li>Data file: <a href="../../files/wiki/hri_data_analysis/jibo_survival_experiment_data_independent_samples.csv" download>jibo_survival_experiment_data_independent_samples.csv</a></li>
+                <li>R file: <a href="../../files/wiki/hri_data_analysis/stats_test_for_independent_samples.R" download>stats_test_for_independent_samples.R</a></li>
+            </ul>
+        </p>
+
+      </section>
+
+      <section class="wiki-section">
+        <h2>Which Statistics Test Should I Run? A Guide to Conducting a Statistical Analysis on HRI Data for <u>Grouped (Non-Independent) Samples</u></h2>
+
+        <h3>Software Setup</h3>
+        <p>
+            Like with statistical analysis on independent samples data, I use the <a href="https://www.r-project.org/">R programming language</a> and <a href="https://www.rstudio.com/">RStudio IDE</a> to perform my data analysis. One of the primary reasons I use R is because R has the best documentation and ability to use a wide array of statistical tests for grouped samples that are not always available on other platforms (e.g., the multi-level mixed-effects models that will be described below).
+        </p>
+
+        <h3>Working with an Example</h3>
+        <p>
+                For our grouped samples analysis, we'll use another example from one of my prior studies. This time, we will consider <strong><u>each person to be one individual data point</u>, where each individual participant is "grouped" with the other participants that they interacted with during the study</strong>. For this study, we had three participants and one Nao robot completing a collaborative task of constructing railroad routes on a tablet screen. If each individual succeeded in building a valid section of the railroad route, the team would succeed that round. However, if even one member failed to build a valid railroad route section, the team would fail that round. There were 30 rounds of this task during the experiment. At the end of every round the robot would either 1) make a vulnerable utterance, 2) make a neutral utterance, or 3) say nothing. These represented our <strong>3 between subjects conditions: vulnerable robot, neutral robot, and silent robot</strong>. We were interested to see how the robot's utterances would shape how people viewed the robot and how participants interacted during the game (e.g., if they made a mistake did they explain it to the group?). If you want to find out more about the data, you can refer to <a href="../../publications/HRI_2018_Sebo.pdf">my HRI 2018 paper</a>, <a href="https://www.pnas.org/content/117/12/6370">my PNAS 2020 paper</a>, and/or <a href="https://sarahsebo.com/documents/Sarah_Sebo_Dissertation_2020.pdf">my dissertation</a>.
+        </p>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <img src="../../images/wiki/hri_data_analysis/building_trust.jpg" alt="Building trust in human-robot interaction research" style="max-width: 50%; height: auto; border-radius: 6px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);">
+        </div>
+
+        <h3>Mixed-Effects Models</h3>
+
+        <p>
+            Because the data associated with each participant is not independent of the rest of the participants' data, we cannot use the tests outlined in the prior section like t-tests and ANOVAs. Instead, we must use a <strong>mixed-effects model</strong> which captures both fixed effects and random effects. <strong>Fixed effects</strong> are effects that we can capture and are non-random, including most independent variables (e.g., experimental condition variables, covariates). <strong>Random effects</strong> represent random variables in a statistical model. The random effect that we'll be controlling for in HRI analyses with grouped samples is the groupings of participants. For example, if participants 1, 2, and 3 are in group A and participants 4, 5, and 6 are in group B we can have one variable in our model that captures participant groups, where the "group" for participant 1 is A and the "group" for participant 5 is B.
+        </p>
+
+        <p>
+            While specifying the random effect in a mixed-effects model, you will also have to specify how that random effect relates to the intercept and slope of the model. I've typically always used a specification of a random intercept with a fixed mean for the random effects I've dealt with (which have exclusively been applied to participants in groups). In R this translates to specifying the random effect as: <strong>(1 | group)</strong>, assuming that "group" is the variable name representing my random effect.
+        </p>
+
+        <p>
+            Here are some other resources I'd recommend checking out on mixed-effects models:
+            <ul>
+                <li><a href="https://m-clark.github.io/mixed-models-with-R/random_intercepts.html">Mixed Models with R</a> by Github user m-clark</li>
+                <li><a href="https://www.rensvandeschoot.com/tutorials/lme4/">LME4 Tutorial: Popularity Data</a> by Rens van de Schoot</li>
+            </ul>
+        </p>
+
+        <h3>Selecting the Right Statistical Test</h3>
+        <p>
+            The selection process for the right statistical test is simpler for grouped samples, however, the process of fitting the model is more complex. When determining which statistics test to run, the main determining factor is whether the dependent variable is categorical or continuous:
+            <ul>
+                <li>
+                    Is the <strong>dependent variable <u>categorical</u></strong>? &#8594; Run a <strong><i>generalized linear miexed-effects model</i></strong> with a binomial family and logit link
+                    <ul>
+                        <li>I typically use the <strong>glmer</strong> function from the <strong>lme4</strong> R package with the additional argument: <strong>family=binomial(link = "logit")</strong></li>
+                    </ul>
+                </li>
+                <li>
+                    Is the <strong>dependent variable <u>continuous</u></strong>? &#8594; Run a <strong><i>linear mixed-effects model</i></strong>
+                    <ul>
+                        <li>I typically use the <strong>lmer</strong> function from the <strong>lme4</strong> R package</li>
+                    </ul>
+                </li>
+            </ul>
+        </p>
+
+        <h3>Achieving a Good Model Fit</h3>
+
+        <p>
+            For these mixed-effect models, one way to refine the statistical model is to find the model with the best fit by systematically eliminating covariates that do not have a significant influence on the model's outcomes. I have modeled how to do this in the example R files below. Basically, the process involves running the mixed-effects model (with REML=FALSE if you're using a lmer model) and eliminating one-by-one covariates that have a non-significant influence over the model's outcome variable - each time eliminating the covariate with the largest p-value as long as it's not lower than 0.05. Once you've gone through this process, you can compare the model fits for all of those models by running an ANOVA test on the models. The ANOVA will output AIC (Akaike Information Criterion) and BIC (Bayesian Information Criterion), the lower these values are, the better the model fit. Compared with AIC, BIC imposes a larger penalty for including more variables and prefers a less complex model. You can choose either criterion to use to select the model with the best fit, and then choose the model that has the lowest value of the criterion you choose. Then, you can run the final version of that model (with REML=TRUE if you're using a lmer model) and you have your end result.
+        </p>
+
+        <p>
+            There are a few other tests that are good to do in order to ensure a good model fit (which are included in the examples provided):
+            <ul>
+                <li>ensuring that plots of the residuals don't contain values greater than 3 standard deviations away from the mean and that there aren't any trends</li>
+                <li>plotting the dependent variable (y-axis) against the model predictions (x-axis) to ensure that the model seems to be fitting well (data points are clustered around the prediction line)</li>
+            </ul>
+        </p>
+
+        <h3>Examples of Each of the Aforementioned Statistical Tests in R</h3>
+
+        <p>
+            For each of the two tests described above, you will find 1) a sample data file and 2) an R file that provides an example of using the test on the example data:
+            <ul>
+                <li>
+                    Categorical dependent variable evaluated with the generalized linear mixed-effects model
+                    <ul>
+                        <li>Data file: <a href="../../files/wiki/hri_data_analysis/nao_vulnerability_experiment_repeated_measures_data.csv" download>nao_vulnerability_experiment_repeated_measures_data.csv</a></li>
+                        <li>R file: <a href="../../files/wiki/hri_data_analysis/stats_test_for_grouped_samples_categorical_dv.R" download>stats_test_for_grouped_samples_categorical_dv.R</a></li>
+                    </ul>
+                </li>
+                <li>
+                    Continuous dependent variable evaluated with the linear mixed-effects model
+                    <ul>
+                        <li>Data file: <a href="../../files/wiki/hri_data_analysis/nao_vulnerability_experiment_survey_data.csv" download>nao_vulnerability_experiment_survey_data.csv</a></li>
+                        <li>R file: <a href="../../files/wiki/hri_data_analysis/stats_test_for_grouped_samples_continuous_dv.R" download>stats_test_for_grouped_samples_continuous_dv.R</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </p>
+
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 UChicago Human-Robot Interaction Lab. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const navMenu = document.getElementById('nav-menu');
+      navMenu.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>

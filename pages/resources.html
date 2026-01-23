@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resources - HRI Lab</title>
+  <link rel="icon" href="../images/short-logo-color.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="container">
+      <a href="../index.html" class="logo">
+        <img src="../images/short-logo-color.png" alt="HRI Lab Logo">
+        HRI Lab
+      </a>
+      <button class="hamburger" onclick="toggleMenu()">&#9776;</button>
+      <ul id="nav-menu" class="nav-menu">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="people.html">People</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="resources.html" class="active">Resources</a></li>
+        <li><a href="wiki.html">Wiki</a></li>
+        <li><a href="join-us.html">Join Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <h1>Resources</h1>
+  </div>
+
+  <!-- Main Content -->
+  <main>
+    <div class="container">
+      <h2>Questionnaire Measures</h2>
+      
+      <ul class="resource-list">
+        <li class="resource-item">
+          <h3>Connection-Coordination Rapport (CCR) Scale</h3>
+          <p>
+            A psychometric scale used to measure rapport between two interactants (e.g., a human and a robot). We have developed and validated both a full-length 18-item version and a reduced-length 8-item version.
+          </p>
+          <a href="resources/ccr_scale.html">Scale and Usage →</a>
+        </li>
+
+        <li class="resource-item">
+          <h3>Interactive IOS Scale for Multiparty Interactions (IIMI)</h3>
+          <p>
+            A measure of interpersonal closeness with multiple interactants adapted from Aron's Inclusion of Other in the Self (IOS) scale.
+          </p>
+          <a href="https://github.com/SeboLab/interactive_ios_scale">Code and Usage →</a>
+        </li>
+      </ul>
+
+      <h2>Our Robots</h2>
+      
+      <div class="robots-grid">
+        <div class="robot-card">
+          <div class="robot-image">
+            <img src="../images/robots/Franka_Emika.png" alt="Franka Emika">
+          </div>
+          <h3 class="robot-name">Franka Emika</h3>
+        </div>
+
+        <div class="robot-card">
+          <div class="robot-image">
+            <img src="../images/robots/Misty.jpg" alt="Misty">
+          </div>
+          <h3 class="robot-name">Misty II</h3>
+        </div>
+
+        <div class="robot-card">
+          <div class="robot-image">
+            <img src="../images/robots/Nao.png" alt="NAO">
+          </div>
+          <h3 class="robot-name">NAO</h3>
+        </div>
+
+        <div class="robot-card">
+          <div class="robot-image">
+            <img src="../images/robots/clicbot.jpeg" alt="ClicBot">
+          </div>
+          <h3 class="robot-name">ClicBot</h3>
+        </div>
+
+        <div class="robot-card">
+          <div class="robot-image">
+            <img src="../images/robots/stretch_3.png" alt="Stretch 3">
+          </div>
+          <h3 class="robot-name">Stretch 3</h3>
+        </div>
+
+        <div class="robot-card">
+          <div class="robot-image">
+            <img src="../images/robots/temi3_black.jpg" alt="Temi 3">
+          </div>
+          <h3 class="robot-name">Temi 3</h3>
+        </div>
+
+        <div class="robot-card">
+          <div class="robot-image">
+            <img src="../images/robots/turtlebot3.png" alt="TurtleBot 3">
+          </div>
+          <h3 class="robot-name">TurtleBot 3</h3>
+        </div>
+
+        <div class="robot-card">
+          <div class="robot-image">
+            <img src="../images/robots/turtlebot4.webp" alt="TurtleBot 4">
+          </div>
+          <h3 class="robot-name">TurtleBot 4</h3>
+        </div>
+
+        <div class="robot-card">
+          <div class="robot-image">
+            <img src="../images/robots/vector.jpg" alt="Vector">
+          </div>
+          <h3 class="robot-name">Vector</h3>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 UChicago Human-Robot Interaction Lab. All rights reserved.</p>
+  </footer>
+</body>
+</html>
+
+<script>
+  function toggleMenu() {
+    const navMenu = document.getElementById('nav-menu');
+    navMenu.classList.toggle('active');
+  }
+</script>
