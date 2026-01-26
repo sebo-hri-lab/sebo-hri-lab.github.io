@@ -387,6 +387,7 @@ p {
 
 .carousel-dots {
   margin-top: 1rem;
+  display: none;
 }
 
 .dot {
@@ -878,6 +879,15 @@ footer a:hover {
 
 /* Responsive */
 @media (max-width: 768px) {
+  .carousel-arrow {
+    display: none;
+  }
+
+  .carousel-dots {
+    display: block;
+    text-align: center;
+  }
+
   .container {
     padding: 0 0.75rem;
   }
