@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Presentation Templates - HRI Lab Wiki</title>
+  <link rel="icon" href="../../images/short-logo-color.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <a href="../../index.html" class="logo">
+        <img src="../../images/short-logo-color.png" alt="HRI Lab Logo">
+        HRI Lab
+      </a>
+      <button class="hamburger" onclick="toggleMenu()">&#9776;</button>
+      <ul id="nav-menu" class="nav-menu">
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../research.html">Research</a></li>
+        <li><a href="../people.html">People</a></li>
+        <li><a href="../publications.html">Publications</a></li>
+        <li><a href="../resources.html">Resources</a></li>
+        <li><a href="../wiki.html" class="active">Wiki</a></li>
+        <li><a href="../join-us.html">Join Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <h1>Presentation Templates</h1>
+  </div>
+
+  <main>
+    <div class="container wiki-entry">
+
+      <section class="wiki-section">
+        <h2>Overview</h2>
+        <p>
+          These presentation templates are meant to be a resource to help HRI lab members create professional presentations with consistent branding.
+        </p>
+      </section>
+
+      <section class="wiki-section">
+        <h2>Available Templates</h2>
+
+        <div class="template-card">
+          <div class="template-card-image">
+            <img src="../../images/wiki/presentation_templates/title_slide_example.png" alt="PowerPoint Template Preview">
+          </div>
+          <div class="template-card-content">
+            <h3>PowerPoint Presentation Template</h3>
+            <p>
+              A comprehensive PowerPoint template featuring the HRI Lab branding, logo, and color scheme. 
+            </p>
+            <a href="https://drive.google.com/file/d/1oixZQT6ZIQHg61lEaftCFAck5y9dePPU/view?usp=sharing" class="download-button">Download Template</a>
+          </div>
+        </div>
+
+        <div class="template-card">
+          <div class="template-card-image">
+            [Template Preview]
+          </div>
+          <div class="template-card-content">
+            <h3>Google Slides Presentation Template (Coming Soon)</h3>
+            <p>
+              A cloud-based Google Slides template with the same professional HRI Lab branding as the PowerPoint version. 
+            </p>
+            <a href="#" class="download-button">Coming Soon</a>
+          </div>
+        </div>
+
+        <div class="template-card">
+          <div class="template-card-image">
+            [Template Preview]
+          </div>
+          <div class="template-card-content">
+            <h3>Research Poster Template (Coming Soon)</h3>
+            <p>
+              A professional research poster template suitable for conferences and lab presentations. 
+            </p>
+            <a href="#" class="download-button">Coming Soon</a>
+          </div>
+        </div>
+
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 UChicago Human-Robot Interaction Lab. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const navMenu = document.getElementById('nav-menu');
+      navMenu.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
