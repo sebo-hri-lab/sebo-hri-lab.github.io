@@ -186,6 +186,23 @@ p {
   line-height: 1.8;
 }
 
+.section-links {
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.section-links a {
+  text-decoration: none;
+}
+
+.section-links a:hover {
+  text-decoration: underline;
+}
+
+.anchor-target {
+  scroll-margin-top: 7rem;
+}
+
 /* Lists */
 .join-section ul {
   margin-left: 1.5rem;
