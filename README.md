@@ -1,6 +1,6 @@
-# UChicago Human-Robot Interaction Lab Official Website
+# Socially Engaging roBOtics Lab Official Website
 
-The template for this website is the [Helios](https://html5up.net/helios) template from [HTML5 UP](https://html5up.net/) and customized by [Sarah Sebo](https://sarahsebo.com/index.html) for the UChicago HRI Lab website. 
+The template for this website is the [Helios](https://html5up.net/helios) template from [HTML5 UP](https://html5up.net/) and customized by [Sarah Sebo](https://sarahsebo.com/index.html) for the SEBO Lab website. 
 
 ## New Members
 

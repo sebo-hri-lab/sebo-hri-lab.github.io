@@ -25,7 +25,8 @@ a:visited {
 
 b, strong {
   font-weight: 700;
-  font-size: inherit;
+  font-size: 1em;
+  color: #000;
 }
 
 /* Navigation */
@@ -51,7 +52,7 @@ nav .logo {
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: #8B0000;
+  color: #971b2f;
   font-weight: 700;
   font-size: 1.7rem;
   gap: 0.75rem;
@@ -125,9 +126,9 @@ nav ul a:visited {
 }
 
 nav ul a:hover {
-  color: #8B0000;
+  color: #971b2f;
   text-decoration: underline;
-  text-decoration-color: #8B0000;
+  text-decoration-color: #971b2f;
   text-decoration-thickness: 2px;
 }
 
@@ -136,6 +137,44 @@ nav ul a:hover {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
+}
+
+/* Important announcement banner */
+.important-banner {
+  margin: 2rem 0;
+  padding: 1.35rem 1.6rem;
+  border: 2px solid #971b2f;
+  border-left: 10px solid #971b2f;
+  border-radius: 10px;
+  background: #fce9ed;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.important-banner h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.35rem;
+  color: #6d000f;
+  border-bottom: none;
+  padding-bottom: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.important-banner p {
+  margin: 0 0 0.75rem;
+  color: #3a3a3a;
+  line-height: 1.7;
+}
+
+.important-banner p:last-child {
+  margin-bottom: 0;
+}
+
+.important-banner a {
+  color: #971b2f;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
 }
 
 /* Header/Hero */
@@ -151,6 +190,10 @@ nav ul a:hover {
   color: #1a1a1a;
 }
 
+.sebo-highlight {
+  color: #971b2f;
+}
+
 .hero p {
   font-size: 1.2rem;
   color: #666;
@@ -161,14 +204,14 @@ nav ul a:hover {
 /* Main Content */
 main {
   min-height: calc(100vh - 200px);
-  padding: 3rem 2rem;
+  padding: 1.5rem 2rem 3rem 2rem;
 }
 
 h2 {
   font-size: 2rem;
   margin-bottom: 1.5rem;
   color: #1a1a1a;
-  border-bottom: 3px solid #8B0000;
+  border-bottom: 3px solid #971b2f;
   padding-bottom: 0.5rem;
   display: inline-block;
 }
@@ -230,13 +273,13 @@ p {
   background-color: #f9f9f9;
   padding: 1.5rem;
   margin-bottom: 1.5rem;
-  border-left: 4px solid #8B0000;
+  border-left: 4px solid #971b2f;
   border-radius: 4px;
 }
 
 .news-date {
   font-size: 0.9rem;
-  color: #8B0000;
+  color: #971b2f;
   font-weight: 600;
 }
 
@@ -287,22 +330,40 @@ p {
   border-radius: 8px;
 }
 
+.locations-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.location-item {
+  display: flex;
+  flex-direction: column;
+}
+
 .location-grid {
   display: flex;
   gap: 1.5rem;
   align-items: stretch;
   flex-wrap: nowrap;
+  flex-direction: column;
 }
 
 .location-map {
-  flex: 1.2;
+  flex: 1;
 }
 
 .location-address {
-  flex: 0.8;
+  flex: 0;
+  padding-top: 0.5rem;
 }
 
 @media (max-width: 768px) {
+  .locations-grid {
+    grid-template-columns: 1fr;
+  }
   .location-grid {
     flex-direction: column;
   }
@@ -318,7 +379,7 @@ p {
 }
 
 .location-address strong {
-  color: #8B0000;
+  color: #000;
 }
 
 .location-map iframe {
@@ -434,7 +495,7 @@ p {
 }
 
 .dot.active {
-  background-color: #8B0000;
+  background-color: #971b2f;
 }
 
 /* People Section */
@@ -508,12 +569,12 @@ p {
   height: 2px;
   bottom: -2px;
   left: 0;
-  background-color: #8B0000;
+  background-color: #971b2f;
   transition: width 0.3s ease;
 }
 
 .person-name a:hover {
-  color: #8B0000;
+  color: #971b2f;
 }
 
 .person-name a:hover::after {
@@ -521,9 +582,17 @@ p {
 }
 
 .person-role {
-  color: #8B0000;
+  color: #1a1a1a;
   font-weight: 500;
   margin-top: 0.5rem;
+}
+
+.person-role.school-ku {
+  color: #0051ba;
+}
+
+.person-role.school-uchicago {
+  color: #800000;
 }
 
 .person-duration {
@@ -544,7 +613,7 @@ p {
   padding: 2rem;
   margin-bottom: 2rem;
   border-radius: 8px;
-  border-left: 4px solid #8B0000;
+  border-left: 4px solid #971b2f;
 }
 
 .research-content {
@@ -574,7 +643,7 @@ p {
 
 .research-area h4 {
   font-size: 1.1rem;
-  color: #8B0000;
+  color: #971b2f;
   margin-top: 1.5rem;
   margin-bottom: 0.75rem;
   font-weight: 600;
@@ -597,7 +666,7 @@ p {
   content: "→";
   position: absolute;
   left: 0;
-  color: #8B0000;
+  color: #971b2f;
   font-weight: 600;
 }
 
@@ -632,7 +701,7 @@ p {
   padding: 1rem;
   margin-bottom: 1rem;
   border-radius: 8px;
-  border-left: 4px solid #8B0000;
+  border-left: 4px solid #971b2f;
 }
 
 .publication-authors {
@@ -654,7 +723,7 @@ p {
 }
 
 .publication-award {
-  color: #8B0000;
+  color: #971b2f;
   font-size: 0.9rem;
   margin-top: 0.25rem;
   font-weight: 600;
@@ -669,7 +738,7 @@ p {
 
 .publication-button {
   display: inline-block;
-  background-color: #8B0000;
+  background-color: #971b2f;
   color: white;
   padding: 0.3rem 0.75rem;
   border-radius: 4px;
@@ -680,7 +749,7 @@ p {
 }
 
 .publication-button:hover {
-  background-color: #600000;
+  background-color: #681320;
   color: white;
 }
 
@@ -691,10 +760,10 @@ p {
 .publication-button-secondary {
   display: inline-block;
   background-color: transparent;
-  color: #8B0000;
+  color: #971b2f;
   padding: 0.3rem 0.75rem;
   border-radius: 4px;
-  border: 1.5px solid #8B0000;
+  border: 1.5px solid #971b2f;
   text-decoration: none;
   font-weight: 600;
   font-size: 0.8rem;
@@ -702,12 +771,12 @@ p {
 }
 
 .publication-button-secondary:hover {
-  background-color: #8B0000;
+  background-color: #971b2f;
   color: white;
 }
 
 .publication-button-secondary:visited {
-  color: #8B0000;
+  color: #971b2f;
 }
 
 .publication-button-secondary:visited:hover {
@@ -717,7 +786,7 @@ p {
 .publication-link {
   display: inline-block;
   margin-top: 0.5rem;
-  color: #8B0000;
+  color: #971b2f;
   text-decoration: none;
   font-weight: 500;
 }
@@ -737,7 +806,7 @@ p {
   padding: 1.5rem;
   margin-bottom: 1rem;
   border-radius: 8px;
-  border-left: 4px solid #8B0000;
+  border-left: 4px solid #971b2f;
 }
 
 .resource-item h3 {
@@ -746,7 +815,7 @@ p {
 }
 
 .resource-item a {
-  color: #8B0000;
+  color: #971b2f;
   text-decoration: none;
   font-weight: 500;
 }
@@ -815,9 +884,17 @@ p {
   margin-top: 0;
 }
 
+.uchicago-highlight {
+  color: #800000;
+}
+
+.ku-highlight {
+  color: #0051ba;
+}
+
 .cta-button {
   display: inline-block;
-  background-color: #8B0000;
+  background-color: #971b2f;
   color: white;
   padding: 1rem 2rem;
   border-radius: 4px;
@@ -834,7 +911,7 @@ p {
 }
 
 .cta-button:hover {
-  background-color: #600000;
+  background-color: #681320;
 }
 
 /* Tables */
@@ -883,7 +960,7 @@ ol li, ul li {
   margin-top: 1rem;
   padding: 1rem;
   padding-left: 1.5rem;
-  border-left: 4px solid #8B0000;
+  border-left: 4px solid #971b2f;
   background-color: #f9f9f9;
   font-size: 0.95rem;
   color: #555;
@@ -894,7 +971,7 @@ ol li, ul li {
   margin: 20px 0;
   padding: 20px;
   background-color: #f9f9f9;
-  border-left: 4px solid #8B0000;
+  border-left: 4px solid #971b2f;
   border-radius: 6px;
   display: flex;
   gap: 20px;
@@ -924,7 +1001,7 @@ ol li, ul li {
 
 .template-card h3 {
   margin-top: 0;
-  color: #8B0000;
+  color: #971b2f;
 }
 
 .template-card p {
@@ -936,7 +1013,7 @@ ol li, ul li {
   display: inline-block;
   padding: 10px 20px;
   margin-top: 10px;
-  background-color: #8B0000;
+  background-color: #971b2f;
   color: white;
   text-decoration: none;
   border-radius: 4px;
@@ -944,7 +1021,7 @@ ol li, ul li {
 }
 
 .template-card .download-button:hover {
-  background-color: #6b0000;
+  background-color: #741524;
 }
 
 .lab-info {
@@ -956,7 +1033,7 @@ ol li, ul li {
 
 .lab-info h4 {
   margin-top: 0;
-  color: #8B0000;
+  color: #971b2f;
 }
 
 .lab-info ul {
@@ -994,7 +1071,7 @@ footer p {
 }
 
 footer a {
-  color: #8B0000;
+  color: #971b2f;
   text-decoration: none;
   font-weight: 500;
 }

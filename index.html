@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HRI Lab</title>
+  <title>SEBO Lab</title>
   <link rel="icon" href="images/short-logo-color.png" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
@@ -13,8 +13,8 @@
   <nav>
     <div class="container">
       <a href="index.html" class="logo">
-        <img src="images/short-logo-color.png" alt="HRI Lab Logo">
-        HRI Lab
+        <img src="images/short-logo-color.png" alt="SEBO Lab Logo">
+        SEBO Lab
       </a>
       <button class="hamburger" onclick="toggleMenu()">&#9776;</button>
       <ul id="nav-menu" class="nav-menu">
@@ -31,13 +31,26 @@
 
   <!-- Hero Section -->
   <div class="hero">
-    <h1>UChicago Human-Robot Interaction Lab</h1>
+    <h1><span class="sebo-highlight">S</span>ocially <span class="sebo-highlight">E</span>ngaging ro<span class="sebo-highlight">B</span><span class="sebo-highlight">O</span>tics (<span class="sebo-highlight">S</span><span class="sebo-highlight">E</span><span class="sebo-highlight">B</span><span class="sebo-highlight">O</span>) Lab</h1>
     <p>We design social robots that that empower people, support social connection, and enrich daily life.</p>
   </div>
 
   <!-- Main Content -->
   <main>
     <div class="container">
+      <section class="important-banner" aria-label="Important announcement">
+        <h2>PI Sarah Sebo Moves to the University of Kansas (KU)</h2>
+        <p>
+          As of summer 2026, PI Sarah Sebo has moved from UChicago to the University of Kansas (KU). For the next two years (August 2026 to May 2028), the lab will be split across the UChicago and KU campuses with research activities continuing at both locations.
+        </p>
+        <p>
+          <strong>Prospective PhD Students:</strong> PI Sebo is eagerly looking to recruit 2-3 PhD students to enroll in the KU EECS PhD program for the upcoming recruitment cycle (applications submitted Fall 2026 to start Fall 2027). <a href="pages/join-us.html#phd-students"><strong>Follow the instructions here to apply.</strong></a>
+        </p>
+        <p>
+          <strong>Undergraduate Students:</strong> Undergraduate students at both UChicago and KU are encouraged to get involved with the HRI research happening at both sites. <a href="pages/join-us.html#undergrad-and-masters-students"><strong>Follow this link for more information about how to get involved.</strong></a>
+        </p>
+      </section>
+
       <!-- Photo Carousel -->
       <div class="carousel">
         <div class="carousel-container">
@@ -46,7 +59,10 @@
             <img src="images/carousel/Sebo Lab_ITL_group_photo_SLG.jpg" alt="Lab research">
           </div>
           <div class="carousel-slide">
-            <img src="images/carousel/2026_03_18_HRI_2026_crew.jpg" alt="UChicago HRI Lab at HRI 2026 in Edinburgh Scotland">
+            <img src="images/carousel/2026_06_16_summer_lab_point.jpg" alt="SEBO Lab summer 2026 group photo">
+          </div>
+          <div class="carousel-slide">
+            <img src="images/carousel/2026_03_18_HRI_2026_crew.jpg" alt="SEBO Lab at HRI 2026 in Edinburgh Scotland">
           </div>
           <div class="carousel-slide">
             <img src="images/carousel/Sebo Lab_ITL_reading_aloud_lengthwise_SLG.jpg" alt="Reading aloud to a robot">
@@ -66,12 +82,6 @@
           <div class="carousel-slide">
             <img src="images/carousel/Sebo Lab_ITL_group_conversation_with_robot_SLG.jpg" alt="Two people talking with a robot">
           </div>
-          <div class="carousel-slide">
-            <img src="images/carousel/Sebo Lab_ITL_lab_door_SLG.jpg" alt="HRI lab entrance">
-          </div>
-          <div class="carousel-slide">
-            <img src="images/carousel/hri_lab_2021_cropped.JPG" alt="HRI lab">
-          </div>
           
           <button class="carousel-arrow carousel-next" onclick="changeSlide(1)">&#10095;</button>
         </div>
@@ -85,12 +95,25 @@
           <span class="dot" onclick="currentSlide(6)"></span>
           <span class="dot" onclick="currentSlide(7)"></span>
           <span class="dot" onclick="currentSlide(8)"></span>
+          <span class="dot" onclick="currentSlide(9)"></span>
+          <span class="dot" onclick="currentSlide(10)"></span>
         </div>
       </div>
 
       <!-- News Section -->
       <section class="news-section">
         <h2>Recent News</h2>
+
+        <div class="news-item">
+          <div class="news-date">June 15, 2026</div>
+          <div class="news-title">UChicago SEBO Lab Kicks Off Summer 2026 with 9 Full-Time Undergraduate Interns</div>
+          <div class="news-description">
+            <p>
+              We're excited to mark the start of our lab's summer research initiatives, which include the full-time involvement of 9 undergraduate summer interns! We're very excited to have this very talented group join our lab and work with us on HRI research this summer!
+            </p>
+            <img class="news-media" src="images/carousel/2026_06_16_summer_lab_point.jpg" alt="SEBO Lab summer 2026 research team">
+          </div>
+        </div>
         
         <div class="news-item">
           <div class="news-date">March 18, 2026</div>
@@ -105,7 +128,7 @@
 
         <div class="news-item">
           <div class="news-date">March 17, 2026</div>
-          <div class="news-title">HRI Lab at the HRI 2026 Conference in Edinburgh, Scotland</div>
+          <div class="news-title">SEBO Lab at the HRI 2026 Conference in Edinburgh, Scotland</div>
           <div class="news-description">
             <p>
               Our lab traveled to Edinburgh, Scotland for the ACM/IEEE International Conference on Human-Robot Interaction (HRI 2026), where we presented three papers showcasing our recent research on human-robot interaction:
@@ -115,29 +138,7 @@
               <li><b><a href="publications/HRI_2026_Flanagan_Can_You_Help_Me.pdf">Can You Help Me? The Influence of Robot Requests for Help on Child-Robot Connection</a></b> by Teresa Flanagan, Justin Chenjia Zhang, Lin Bian, and Sarah Sebo</li>
               <li><b><a href="publications/HRI_2026_Zhang_Customizing_Robot_Personality.pdf">Customizing Robot Personality: How Personality Control and Form Factor Shape Perceptions of a Robot as a Social Agent</a></b> by Alex Wuqi Zhang, Aaron Huang, Allison J. Li, and Sarah Sebo</li>
             </ul>
-            <img class="news-media" src="images/news/2026_03_18_HRI_2026_crew.jpg" alt="HRI Lab at HRI 2026 in Edinburgh, Scotland">
-          </div>
-        </div>
-
-        <div class="news-item">
-          <div class="news-date">Feb 9, 2026</div>
-          <div class="news-title">Reduced-Length CCR Scale Published in <i>ACM Transactions on Human-Robot Interaction</i></div>
-          <div class="news-description">
-            <p>
-              Our lab has published the <b><a href="https://dl.acm.org/doi/10.1145/3796533" target="_blank">Reduced-Length Connection-Coordination Rapport (CCR) Scale</a></b> (Ting-Han Lin, G. Chen, Bilge Mutlu, J. Gregory Trafton, and Sarah Sebo) in <i>ACM Transactions on Human-Robot Interaction</i>. This new 8-item scale is a shortened and validated version of our full-length 18-item CCR Scale, designed to save time and reduce participant survey fatigue. Researchers interested in measuring human-robot rapport in their studies can learn more about both the full-length and reduced-length CCR scales on our <b><a href="pages/resources/ccr_scale.html">CCR Scale resource page</a></b>.
-            </p>
-          </div>
-        </div>
-      
-
-        <div class="news-item">
-          <div class="news-date">Oct 27, 2025</div>
-          <div class="news-title">UChicago HRI Lab Featured on UChicago's Inside the Lab</div>
-          <div class="news-description">
-            <p>
-                The work of our lab has recently been featured on UChicago's Inside the Lab series! <b><a href="https://www.youtube.com/watch?v=BnQJpNBetAM">Check out the video</a></b> and the <a href="https://news.uchicago.edu/story/sebo-lab-programming-robots-better-interact-humans">corresponding news article</a> to learn more about our lab's mission and research areas, as well as some of the exciting projects we are working on.
-            </p>
-            <iframe class="news-media" width="560" height="315" src="https://www.youtube.com/embed/BnQJpNBetAM?si=Pe8k1ZUVJDzIphjA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <img class="news-media" src="images/news/2026_03_18_HRI_2026_crew.jpg" alt="SEBO Lab at HRI 2026 in Edinburgh, Scotland">
           </div>
         </div>
 
@@ -149,12 +150,14 @@
       </section>
 
       <!-- Location Section -->
+      <!-- ARCHIVED SINGLE LOCATION FORMAT - TO BE RESTORED WHEN LAB IS ONLY AT KU -->
+      <!--
       <section class="location-section">
         <h2>Location</h2>
         <div class="location-grid">
           <div class="location-map">
             <iframe
-              title="HRI Lab Location"
+              title="SEBO Lab Location"
               src="https://maps.google.com/maps?q=John%20Crerar%20Library%205730%20S%20Ellis%20Ave%20Chicago%20IL%2060637&output=embed"
               loading="lazy"
               allowfullscreen
@@ -163,11 +166,61 @@
           </div>
           <div class="location-address">
             <p>
-              <strong>HRI Lab Location</strong><br>
+              <strong>SEBO Lab Location</strong><br>
               John Crerar Library Room 379<br>
               5730 S Ellis Ave<br>
               Chicago, IL 60637
             </p>
+          </div>
+        </div>
+      </section>
+      -->
+
+      <!-- Dual Location Section -->
+      <section class="location-section">
+        <h2>Locations</h2>
+        <div class="locations-grid">
+          <div class="location-item">
+            <div class="location-grid">
+              <div class="location-map">
+                <iframe
+                  title="SEBO Lab at KU"
+                  src="https://maps.google.com/maps?q=Nichols%20Hall%202335%20Irving%20Hill%20Rd%20Lawrence%20KS%2066045&output=embed"
+                  loading="lazy"
+                  allowfullscreen
+                  referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+              </div>
+              <div class="location-address">
+                <p>
+                  <strong>KU SEBO Lab</strong><br>
+                  Nichols Hall Room 349<br>
+                  2335 Irving Hill Rd<br>
+                  Lawrence, KS 66045
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="location-item">
+            <div class="location-grid">
+              <div class="location-map">
+                <iframe
+                  title="SEBO Lab at UChicago"
+                  src="https://maps.google.com/maps?q=John%20Crerar%20Library%205730%20S%20Ellis%20Ave%20Chicago%20IL%2060637&output=embed"
+                  loading="lazy"
+                  allowfullscreen
+                  referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+              </div>
+              <div class="location-address">
+                <p>
+                  <strong>UChicago SEBO Lab</strong><br>
+                  John Crerar Library Room 379<br>
+                  5730 S Ellis Ave<br>
+                  Chicago, IL 60637
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -176,7 +229,7 @@
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2026 UChicago Human-Robot Interaction Lab. All rights reserved.</p>
+    <p>&copy; 2026 Socially Engaging roBOtics Lab. All rights reserved.</p>
   </footer>
 
   <script src="js/carousel.js"></script>
