@@ -177,6 +177,36 @@ nav ul a:hover {
   text-decoration-thickness: 2px;
 }
 
+.important-banner-body {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.important-banner-image {
+  width: 180px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  flex: 0 0 180px;
+}
+
+.important-banner-copy {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .important-banner-body {
+    flex-direction: column;
+  }
+
+  .important-banner-image {
+    width: 100%;
+    max-width: 260px;
+    flex-basis: auto;
+  }
+}
+
 /* Header/Hero */
 .hero {
   text-align: center;
