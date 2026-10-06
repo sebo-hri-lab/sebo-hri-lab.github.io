@@ -1215,3 +1215,9 @@ footer .footer-social a:hover {
 .toc a:hover {
   text-decoration: underline;
 }
+
+.license-note {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 2rem;
+}
