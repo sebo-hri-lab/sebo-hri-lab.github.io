@@ -631,6 +631,16 @@ p {
   margin-top: 0.15rem;
 }
 
+.person-duration.school-ku {
+  color: #0051ba;
+  font-weight: 500;
+}
+
+.person-duration.school-uchicago {
+  color: #800000;
+  font-weight: 500;
+}
+
 .person-bio {
   font-size: 0.9rem;
   color: #666;
